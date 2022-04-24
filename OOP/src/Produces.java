@@ -15,13 +15,13 @@ public class Produces extends Action
 	{
 		boolean found = false;
 		String result = "Not found";
-		for (int i = 0; i < MAX_ARR; i++)
+		for (int i = 0; i < actionsArrList.size(); i++)
 		{
-			if (actionsArr[i] instanceof Produces)
-				if (actionsArr[i].getMovie() == movie);
+			if (actionsArrList.get(i) instanceof Produces)
+				if (actionsArrList.get(i).getMovie() == movie);
 				{
 					found = true;
-					result = ((Produces) actionsArr[i]).getRole();
+					result = ((Produces) actionsArrList.get(i)).getRole();
 				}
 		}
 		return result;
@@ -33,13 +33,13 @@ public class Produces extends Action
 	public void setRole(Movie movie, String role)
 	{
 		boolean found = false;
-		for (int i = 0; i < MAX_ARR; i++)
+		for (int i = 0; i < actionsArrList.size(); i++)
 		{
-			if (actionsArr[i] instanceof Produces)
-				if (actionsArr[i].getMovie() == movie);
+			if (actionsArrList.get(i) instanceof Produces)
+				if (actionsArrList.get(i).getMovie() == movie);
 				{
 					found = true;
-					((Produces) actionsArr[i]).setRole(role);
+					((Produces) actionsArrList.get(i)).setRole(role);
 				}
 		}
 		if (found == false)

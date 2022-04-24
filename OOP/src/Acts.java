@@ -18,13 +18,13 @@ class Acts extends Action
 	{
 		boolean found = false;
 		String result = "Not found";
-		for (int i = 0; i < MAX_ARR; i++)
+		for (int i = 0; i < actionsArrList.size(); i++)
 		{
-			if (actionsArr[i] instanceof Acts)
-				if (actionsArr[i].getMovie() == movie);
+			if (actionsArrList.get(i) instanceof Acts)
+				if (actionsArrList.get(i).getMovie() == movie);
 				{
 					found = true;
-					result = ((Acts) actionsArr[i]).getRole();
+					result = ((Acts) actionsArrList.get(i)).getRole();
 				}
 		}
 		return result;
@@ -36,13 +36,13 @@ class Acts extends Action
 	public void setRole(Movie movie, String role)
 	{
 		boolean found = false;
-		for (int i = 0; i < MAX_ARR; i++)
+		for (int i = 0; i < actionsArrList.size(); i++)
 		{
-			if (actionsArr[i] instanceof Acts)
-				if (actionsArr[i].getMovie() == movie);
+			if (actionsArrList.get(i) instanceof Acts)
+				if (actionsArrList.get(i).getMovie() == movie);
 				{
 					found = true;
-					((Acts) actionsArr[i]).setRole(role);
+					((Acts) actionsArrList.get(i)).setRole(role);
 				}
 		}
 		if (found == false)
@@ -57,13 +57,13 @@ class Acts extends Action
 	{
 		boolean found = false;
 		String result = "Not found";
-		for (int i = 0; i < MAX_ARR; i++)
+		for (int i = 0; i < actionsArrList.size(); i++)
 		{
-			if (actionsArr[i] instanceof Acts)
-				if (actionsArr[i].getMovie() == movie);
+			if (actionsArrList.get(i) instanceof Acts)
+				if (actionsArrList.get(i).getMovie() == movie);
 				{
 					found = true;
-					result = ((Acts) actionsArr[i]).getCharacterName();
+					result = ((Acts) actionsArrList.get(i)).getCharacterName();
 				}
 		}
 		return result;
@@ -76,13 +76,13 @@ class Acts extends Action
 	public void setCharacterName(Movie movie, String characterName)
 	{
 		boolean found = false;
-		for (int i = 0; i < MAX_ARR; i++)
+		for (int i = 0; i < actionsArrList.size(); i++)
 		{
-			if (actionsArr[i] instanceof Acts)
-				if (actionsArr[i].getMovie() == movie);
+			if (actionsArrList.get(i) instanceof Acts)
+				if (actionsArrList.get(i).getMovie() == movie);
 				{
 					found = true;
-					((Acts) actionsArr[i]).setCharacterName(role);
+					((Acts) actionsArrList.get(i)).setCharacterName(role);
 				}
 		}
 		if (found == false)

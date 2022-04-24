@@ -43,15 +43,16 @@ public class Reviews extends Action
 	{
 		double result = 0;
 		int count = 0;
-		for (int i = 0; i < MAX_ARR; i++)
-			if (actionsArr[i] instanceof Reviews)
+		for (int i = 0; i < actionsArrList.size(); i++)
+			if (actionsArrList.get(i) instanceof Reviews)
 			{
-				result = result + ((Reviews) actionsArr[i]).getRating();
+				result = result + ((Reviews) actionsArrList.get(i)).getRating();
 				count += 1;
 			}
 				
 		return result/count;
 	}
+	
 	
 	@Override
 	public String toString() {

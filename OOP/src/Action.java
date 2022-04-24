@@ -1,19 +1,19 @@
+import java.util.ArrayList;
 public class Action
 {
 	protected Person person;
 	protected Movie movie;
-	protected Action[] actionsArr;
-	protected final int MAX_ARR = 500;
+	protected ArrayList<Action> actionsArrList;
 	
 	public Action()
 	{
-		actionsArr = new Action[MAX_ARR];
+		actionsArrList = new ArrayList<Action>();
 	}
 	public Action(Movie movie, Person person)
 	{
 		this.movie = movie;
 		this.person = person;
-		actionsArr = new Action[MAX_ARR];
+		actionsArrList =  new ArrayList<Action>();
 	}
 	public Person getPerson()
 	{
@@ -37,16 +37,16 @@ public class Action
 	public void displayAllMovies(Person person)
 	{
 		boolean found = false;
-		for (int i = 0; i < MAX_ARR; i++)
+		for (int i = 0; i < actionsArrList.size(); i++)
 		{
-			if (actionsArr[i].getPerson() == person)
+			if (actionsArrList.get(i).getPerson() == person)
 			{
 				found = true;
-				System.out.println(actionsArr[i].getMovie().getName());
+				System.out.println(actionsArrList.get(i).getMovie().getName());
 			}
 		}
 		if (found == false)
-			System.out.println(person + " Not found."); // make try catch
+			System.out.println(person + " Not found."); // make Exception
 	}
 	
 	// method that displays all persons that the passed movie has a relation with
@@ -54,16 +54,16 @@ public class Action
 	public void displayAllPersons(Movie movie)
 	{
 		boolean found = false;
-		for (int i = 0; i < MAX_ARR; i++)
+		for (int i = 0; i < actionsArrList.size(); i++)
 		{
-			if (actionsArr[i].getMovie() == movie)
+			if (actionsArrList.get(i).getMovie() == movie)
 			{
 				found = true;
-				System.out.println(actionsArr[i].getPerson().getName());
+				System.out.println(actionsArrList.get(i).getPerson().getName());
 			}
 		}
 		if (found == false)
-			System.out.println(movie + " Not found."); // make try catch
+			System.out.println(movie + " Not found."); // make Exception
 	}
 	
 	@Override
