@@ -48,6 +48,7 @@ public class Produces extends Action
 	@Override
 	public String toString()
 	{
-		return "Produces [movie=" + movie.getName() + ", producer=" + person.getName() + "]";
+		return "Produces [movie=" + movie.getName() + ", producer=" + person.getName() + ", role=" + role + "]";
 	}
+	
 }
