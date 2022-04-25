@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.UUID;
 
 public class Movie
@@ -10,6 +11,9 @@ public class Movie
 	private String description;
 	private String genre;
 	private static int numOfMovies = 0;
+	private ArrayList<Producer> producersArrList = new ArrayList<Producer>();
+	private ArrayList<Writer> writersArrList = new ArrayList<Writer>();
+	private ArrayList<Director> directorsArrList = new ArrayList<Director>();
 	//private ImageType poster;
 	
 	public Movie()
@@ -83,10 +87,77 @@ public class Movie
 	{
 		return numOfMovies;
 	}
+	
+	public ArrayList<Producer> getProducersArrList()
+	{
+		return producersArrList;
+	}
+	public ArrayList<Writer> getWritersArrList()
+	{
+		return writersArrList;
+	}
+	public ArrayList<Director> getDirectorsArrList()
+	{
+		return directorsArrList;
+	}
+	
+	public void addProducer(Producer producer)
+	{
+		producersArrList.add(producer);
+	}
+	public void removeProducer(Producer producer)
+	{
+		producersArrList.remove(producer);
+	}
+	
+	public void addWriter(Writer writer)
+	{
+		producersArrList.add(writer);
+	}
+	public void removeWriter(Writer writer)
+	{
+		producersArrList.remove(writer);
+	}
+	
+	public void addDirector(Director director)
+	{
+		producersArrList.add(director);
+	}
+	public void removeProducer(Director director)
+	{
+		producersArrList.remove(director);
+	}
+	
+	public void displayProducers()
+	{
+		if (producersArrList.size() == 0) // if the array is empty
+			System.out.println(this.getName() + "\'s Producers Not Found.");
+		else
+			for (int i = 0; i < producersArrList.size(); i++)
+				System.out.println(producersArrList.get(i).getName());
+	}
+	public void displayWriters()
+	{
+		if (writersArrList.size() == 0) // if the array is empty
+			System.out.println(this.getName() + "\'s Writers Not Found.");
+		else
+			for (int i = 0; i < writersArrList.size(); i++)
+				System.out.println(writersArrList.get(i).getName());
+	}
+	public void displayDirectors()
+	{
+		if (directorsArrList.size() == 0) // if the array is empty
+			System.out.println(this.getName() + "\'s Directors Not Found.");
+		else
+			for (int i = 0; i < directorsArrList.size(); i++)
+				System.out.println(directorsArrList.get(i).getName());
+	}
+	
 	@Override
 	public String toString()
 	{
 		return "Movie [id=" + id + ", name=" + name + ", showDate=" + showDate + ", description=" + description
-				+ ", genre=" + genre + "]";
+				+ ", genre=" + genre + ", numOfMovies=" + numOfMovies + ", producersArrList=" + producersArrList + ", writersArrList=" + writersArrList +", directorsArrList=" + directorsArrList +"]";
 	}
+	
 }

@@ -43,6 +43,7 @@ public class Reviews extends Action
 	{
 		double result = 0;
 		int count = 0;
+
 		for (int i = 0; i < actionsArrList.size(); i++)
 			if (actionsArrList.get(i) instanceof Reviews)
 			{

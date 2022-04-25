@@ -36,39 +36,49 @@ public class Action
 	// example: all movies that user1 reviewed
 	public void displayAllMovies(Person person)
 	{
-		boolean found = false;
-		for (int i = 0; i < actionsArrList.size(); i++)
+		if (actionsArrList.size() == 0) // if the array is empty
+			System.out.println(this.getName() + "\'s Movies Not Found.");
+		else
 		{
-			if (actionsArrList.get(i).getPerson() == person)
+			boolean found = false;
+			for (int i = 0; i < actionsArrList.size(); i++)
 			{
-				found = true;
-				System.out.println(actionsArrList.get(i).getMovie().getName());
+				if (actionsArrList.get(i).getPerson() == person)
+				{
+					found = true;
+					System.out.println(actionsArrList.get(i).getMovie().getName());
+				}
 			}
+			if (found == false)
+				System.out.println(person + " Not found.");
 		}
-		if (found == false)
-			System.out.println(person + " Not found."); // make Exception
 	}
 	
 	// method that displays all persons that the passed movie has a relation with
 	// example: all reviewers of movie1
 	public void displayAllPersons(Movie movie)
 	{
-		boolean found = false;
-		for (int i = 0; i < actionsArrList.size(); i++)
+		if (actionsArrList.size() == 0) // if the array is empty
+			System.out.println(this.getName() + "\'s Persons Not Found.");
+		else
 		{
-			if (actionsArrList.get(i).getMovie() == movie)
+			boolean found = false;
+			for (int i = 0; i < actionsArrList.size(); i++)
 			{
-				found = true;
-				System.out.println(actionsArrList.get(i).getPerson().getName());
+				if (actionsArrList.get(i).getMovie() == movie)
+				{
+					found = true;
+					System.out.println(actionsArrList.get(i).getPerson().getName());
+				}
 			}
+			if (found == false)
+				System.out.println(movie + " Not found.");
 		}
-		if (found == false)
-			System.out.println(movie + " Not found."); // make Exception
 	}
 	
 	@Override
 	public String toString()
 	{
-		return "Action [person=" + person + ", movie=" + movie + "]";
+		return "Action [person=" + person + ", movie=" + movie + "actionsArrList" + actionsArrList + "]";
 	}
 }
