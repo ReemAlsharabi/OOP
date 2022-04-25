@@ -21,11 +21,12 @@ public class User extends Login
 		return AccountNumber;
 	}
 
+	/*
 	public void addReviews(User user, Movie movie, String comment, double ratingValue)
 	{
-		review.add(new Reviews(user, movie, comment, ratingValue));
+		review.add(new Reviews(movie, user, comment, ratingValue));
 	}
-
+	 */
 	public String toString()
 	{
 		return super.getUsername() + "reviewing history: " + review;

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+
 public class Action
 {
 	protected Person person;
@@ -7,6 +8,7 @@ public class Action
 	
 	public Action()
 	{
+		super();
 		actionsArrList = new ArrayList<Action>();
 	}
 	public Action(Movie movie, Person person)
@@ -31,7 +33,10 @@ public class Action
 	{
 		this.movie = movie;
 	}
-	
+	public ArrayList<Action> getActionsArrList()
+	{
+		return actionsArrList;
+	}
 	// method that displays all movies that the passed person has a relation with
 	// example: all movies that user1 reviewed
 	public void displayAllMovies(Person person)
@@ -79,6 +84,6 @@ public class Action
 	@Override
 	public String toString()
 	{
-		return "Action [person=" + person + ", movie=" + movie + "actionsArrList" + actionsArrList + "]";
+		return "Action [person=" + person + ", movie=" + movie + ", actionsArrList=" + actionsArrList + "]";
 	}
 }

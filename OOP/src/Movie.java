@@ -1,3 +1,4 @@
+import java.awt.Image;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.UUID;
@@ -14,15 +15,16 @@ public class Movie
 	private ArrayList<Producer> producersArrList = new ArrayList<Producer>();
 	private ArrayList<Writer> writersArrList = new ArrayList<Writer>();
 	private ArrayList<Director> directorsArrList = new ArrayList<Director>();
-	private ImageType poster;
+	private Image poster;
 	
 	public Movie()
 	{
+		super();
 		id = UUID.randomUUID().toString();
 		addedDate = LocalDate.now();
 		numOfMovies += 1;
 	}
-	public Movie(String name, LocalDate showDate, String description, String genre, ImageType poster)
+	public Movie(String name, LocalDate showDate, String description, String genre, Image poster)
 	{
 		id = UUID.randomUUID().toString();
 		this.name = name;

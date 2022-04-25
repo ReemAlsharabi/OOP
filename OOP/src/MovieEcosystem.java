@@ -1,10 +1,10 @@
 import java.awt.Image;
 import java.util.ArrayList;
 
-public class MovieEcosystem
+public class MovieEcosystem extends Person
 {
 	private String birthPlace;
-	private ArrayList awards;
+	private ArrayList<String> awards;
 	private String info;
 	private Image image;
 

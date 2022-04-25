@@ -56,8 +56,9 @@ public class Reviews extends Action
 	
 	
 	@Override
-	public String toString() {
-		return "Reviews [user=" + user.getName() + ", movie=" + movie.getName() + ", comment=" + comment + ", rating=" + rating + ", reviewDate=" + reviewDate
-				+ "]";
+	public String toString()
+	{
+		return "Reviews [comment=" + comment + ", rating=" + rating + ", reviewDate=" + reviewDate + ", user="
+				+ person + ", movie=" + movie + ", actionsArrList=" + actionsArrList + "]";
 	}
 }
