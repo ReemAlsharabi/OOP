@@ -1,4 +1,5 @@
 import java.awt.Image;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class MovieEcosystem extends Person
@@ -8,8 +9,9 @@ public class MovieEcosystem extends Person
 	private String info;
 	private Image image;
 
-	public MovieEcosystem(String b, String i)
+	public MovieEcosystem(String name, String email, String mobile, LocalDate birthDate, String b, String i)
 	{
+		super(name, email, mobile, birthDate);
 		birthPlace = b;
 		awards = new ArrayList<String>();
 		info = i;
@@ -59,7 +61,7 @@ public class MovieEcosystem extends Person
 	@Override
 	public String toString()
 	{
-		return "MovieEcosystem [birthPlace=" + birthPlace + ", awards=" + awards + ", information=" + info + ", image="
+		return super.toString() + "MovieEcosystem [birthPlace=" + birthPlace + ", awards=" + awards + ", information=" + info + ", image="
 				+ image + "]";
 	}
 }
