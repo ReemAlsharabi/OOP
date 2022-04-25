@@ -102,10 +102,30 @@ class Acts extends Action
 				System.out.println("Movie not found.");
 		}
 	}
+	public void displayAllCharacters(Movie movie)
+	{
+		if (actionsArrList.size() == 0) // if the array is empty
+			System.out.println("No Movies Available");
+		else
+		{
+			boolean found = false;
+			for (int i = 0; i < actionsArrList.size(); i++)
+			{
+				if (actionsArrList.get(i) instanceof Acts)
+					if (actionsArrList.get(i).getMovie() == movie);
+					{
+						found = true;
+						((Acts) actionsArrList.get(i)).getCharacterName()
+					}
+			}
+			if (found == false)
+				System.out.println("Movie not found.");
+		}
+	}
 	
 	@Override
 	public String toString()
 	{
-		return "Acts [actor=" + person.getName() + ", movie=" + movie.getName() + ", role=" + role + ", characterName=" + characterName + "]";
+		return "Acts [actor=" + actor.getName() + ", movie=" + movie.getName() + ", role=" + role + ", characterName=" + characterName + "]";
 	}
 }
