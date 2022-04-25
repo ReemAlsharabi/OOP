@@ -126,6 +126,7 @@ class Acts extends Action
 	@Override
 	public String toString()
 	{
-		return "Acts [actor=" + actor.getName() + ", movie=" + movie.getName() + ", role=" + role + ", characterName=" + characterName + "]";
+		return "Acts [role=" + role + ", characterName=" + characterName + ", actor=" + person.getName() + ", movie=" + movie
+				+ ", actionsArrList=" + actionsArrList + "]";
 	}
 }
