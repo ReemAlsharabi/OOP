@@ -37,7 +37,7 @@ public class Action
 	public void displayAllMovies(Person person)
 	{
 		if (actionsArrList.size() == 0) // if the array is empty
-			System.out.println(this.getName() + "\'s Movies Not Found.");
+			System.out.println(person.getName() + "\'s Movies Not Found.");
 		else
 		{
 			boolean found = false;
@@ -59,7 +59,7 @@ public class Action
 	public void displayAllPersons(Movie movie)
 	{
 		if (actionsArrList.size() == 0) // if the array is empty
-			System.out.println(this.getName() + "\'s Persons Not Found.");
+			System.out.println(person.getName() + "\'s Persons Not Found.");
 		else
 		{
 			boolean found = false;
