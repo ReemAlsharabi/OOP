@@ -14,7 +14,7 @@ public class Movie
 	private ArrayList<Producer> producersArrList = new ArrayList<Producer>();
 	private ArrayList<Writer> writersArrList = new ArrayList<Writer>();
 	private ArrayList<Director> directorsArrList = new ArrayList<Director>();
-	//private ImageType poster;
+	private ImageType poster;
 	
 	public Movie()
 	{
@@ -22,7 +22,7 @@ public class Movie
 		addedDate = LocalDate.now();
 		numOfMovies += 1;
 	}
-	public Movie(String name, LocalDate showDate, String description, String genre)
+	public Movie(String name, LocalDate showDate, String description, String genre, ImageType poster)
 	{
 		id = UUID.randomUUID().toString();
 		this.name = name;
@@ -31,7 +31,7 @@ public class Movie
 		this.genre = genre;
 		addedDate = LocalDate.now();
 		numOfMovies += 1;
-		//this.image = image;
+		this.poster = poster;
 	}
 
 	public String getId()
@@ -88,6 +88,14 @@ public class Movie
 		return numOfMovies;
 	}
 	
+	public ImageType getPoster()
+	{
+		return poster;
+	}
+	public void setPoster(ImageType poster)
+	{
+		this.poster = poster;
+	}
 	public ArrayList<Producer> getProducersArrList()
 	{
 		return producersArrList;
@@ -123,7 +131,7 @@ public class Movie
 	{
 		producersArrList.add(director);
 	}
-	public void removeProducer(Director director)
+	public void removeDirector(Director director)
 	{
 		producersArrList.remove(director);
 	}
