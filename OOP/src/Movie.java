@@ -90,11 +90,11 @@ public class Movie
 		return numOfMovies;
 	}
 	
-	public ImageType getPoster()
+	public Image getPoster()
 	{
 		return poster;
 	}
-	public void setPoster(ImageType poster)
+	public void setPoster(Image poster)
 	{
 		this.poster = poster;
 	}
