@@ -1,8 +1,7 @@
 import java.time.LocalDate;
 import java.util.*;
-public class User extends Login {
+public class User extends Account {
 	//data fields 
-    private static int AccountNumber = 0;
     private ArrayList <Reviews> review = new ArrayList<Reviews>();
     
     
