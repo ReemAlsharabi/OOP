@@ -4,18 +4,18 @@ public class Action
 {
 	protected Person person;
 	protected Movie movie;
-	protected ArrayList<Action> actionsArrList;
+	//protected ArrayList<Action> actionsArrList;
 	
 	public Action()
 	{
 		super();
-		actionsArrList = new ArrayList<Action>();
+		//actionsArrList = new ArrayList<Action>();
 	}
 	public Action(Movie movie, Person person)
 	{
 		this.movie = movie;
 		this.person = person;
-		actionsArrList =  new ArrayList<Action>();
+		//actionsArrList =  new ArrayList<Action>();
 	}
 	public Person getPerson()
 	{
