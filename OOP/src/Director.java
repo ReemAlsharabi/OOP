@@ -13,7 +13,7 @@ public class Director extends MovieEcosystem
 
 	public Director(String name, String email, String mobile, LocalDate bDate, String bPlace, String info)
 	{
-		super(name, email, mobile, bDate, bPlace, info);
+		super(name, bDate, bPlace, info);
 		numOfDirectors += 1;
 	}
 
@@ -25,6 +25,6 @@ public class Director extends MovieEcosystem
 	@Override
 	public String toString()
 	{
-		return "Director [name=" + name + ", email=" + email + ", mobile=" + mobile + ", birthDate=" + birthDate + "]";
+		return "Director [name=" + name + ", birthDate=" + birthDate + "]";
 	}
 }

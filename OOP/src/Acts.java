@@ -24,7 +24,7 @@ class Acts extends Action
 			for (int i = 0; i < actionsArrList.size(); i++)
 			{
 				if (actionsArrList.get(i) instanceof Acts)
-					if (actionsArrList.get(i).getMovie() == movie);
+					if (actionsArrList.get(i).getMovie() == movie)
 						result = ((Acts) actionsArrList.get(i)).getRole();
 			}
 		}
@@ -44,7 +44,7 @@ class Acts extends Action
 			for (int i = 0; i < actionsArrList.size(); i++)
 			{
 				if (actionsArrList.get(i) instanceof Acts)
-					if (actionsArrList.get(i).getMovie() == movie);
+					if (actionsArrList.get(i).getMovie() == movie)
 					{
 						found = true;
 						((Acts) actionsArrList.get(i)).setRole(role);
@@ -71,7 +71,7 @@ class Acts extends Action
 			for (int i = 0; i < actionsArrList.size(); i++)
 			{
 				if (actionsArrList.get(i) instanceof Acts)
-					if (actionsArrList.get(i).getMovie() == movie);
+					if (actionsArrList.get(i).getMovie() == movie)
 						result = ((Acts) actionsArrList.get(i)).getCharacterName();
 			}
 		}
@@ -92,7 +92,7 @@ class Acts extends Action
 			for (int i = 0; i < actionsArrList.size(); i++)
 			{
 				if (actionsArrList.get(i) instanceof Acts)
-					if (actionsArrList.get(i).getMovie() == movie);
+					if (actionsArrList.get(i).getMovie() == movie)
 					{
 						found = true;
 						((Acts) actionsArrList.get(i)).setCharacterName(role);
@@ -112,10 +112,10 @@ class Acts extends Action
 			for (int i = 0; i < actionsArrList.size(); i++)
 			{
 				if (actionsArrList.get(i) instanceof Acts)
-					if (actionsArrList.get(i).getMovie() == movie);
+					if (actionsArrList.get(i).getMovie() == movie)
 					{
 						found = true;
-						((Acts) actionsArrList.get(i)).getCharacterName()
+						((Acts) actionsArrList.get(i)).getCharacterName();
 					}
 			}
 			if (found == false)

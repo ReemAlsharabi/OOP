@@ -13,7 +13,7 @@ public class Actor extends MovieEcosystem
 
 	public Actor(String name, String email, String mobile, LocalDate birthDate, String b, String i)
 	{
-		super(name, email, mobile, birthDate, b, i);
+		super(name, birthDate, b, i);
 		numOfActors += 1;
 	}
 
@@ -25,6 +25,6 @@ public class Actor extends MovieEcosystem
 	@Override
 	public String toString()
 	{
-		return "Actor [name=" + name + ", email=" + email + ", mobile=" + mobile + ", birthDate=" + birthDate + "]";
+		return "Actor [name=" + name + ", birthDate=" + birthDate + "]";
 	}
 }

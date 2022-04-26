@@ -17,8 +17,8 @@ public class Writes extends Action{
 		String result = "Not found";
 		for (int i = 0; i < actionsArrList.size(); i++)
 		{
-			if (actionsArrList.get(i) instanceof Writer)
-				if (actionsArrList.get(i).getMovie() == movie);
+			if (actionsArrList.get(i) instanceof Writes)
+				if (actionsArrList.get(i).getMovie() == movie)
 				{
 					found = true;
 					result = ((Writes) actionsArrList.get(i)).getWrittingStyle();
@@ -36,7 +36,7 @@ public class Writes extends Action{
 		for (int i = 0; i < actionsArrList.size(); i++)
 		{
 			if (actionsArrList.get(i) instanceof Writes)
-				if (actionsArrList.get(i).getMovie() == movie);
+				if (actionsArrList.get(i).getMovie() == movie)
 				{
 					found = true;
 					((Writes) actionsArrList.get(i)).setWrittingStyle(writtingStyle);

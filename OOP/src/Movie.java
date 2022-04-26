@@ -122,7 +122,7 @@ public class Movie
 	
 	public void addWriter(Writer writer)
 	{
-		producersArrList.add(writer);
+		writersArrList.add(writer);
 	}
 	public void removeWriter(Writer writer)
 	{
@@ -131,7 +131,7 @@ public class Movie
 	
 	public void addDirector(Director director)
 	{
-		producersArrList.add(director);
+		directorsArrList.add(director);
 	}
 	public void removeDirector(Director director)
 	{

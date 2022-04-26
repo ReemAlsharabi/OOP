@@ -17,8 +17,8 @@ public class Produces extends Action{
 		String result = "Not found";
 		for (int i = 0; i < actionsArrList.size(); i++)
 		{
-			if (actionsArrList.get(i) instanceof Producer)
-				if (actionsArrList.get(i).getMovie() == movie);
+			if (actionsArrList.get(i) instanceof Produces)
+				if (actionsArrList.get(i).getMovie() == movie)
 				{
 					found = true;
 					result = ((Produces) actionsArrList.get(i)).getRole();
@@ -36,7 +36,7 @@ public class Produces extends Action{
 		for (int i = 0; i < actionsArrList.size(); i++)
 		{
 			if (actionsArrList.get(i) instanceof Produces)
-				if (actionsArrList.get(i).getMovie() == movie);
+				if (actionsArrList.get(i).getMovie() == movie)
 				{
 					found = true;
 					((Produces) actionsArrList.get(i)).setRole(role);
