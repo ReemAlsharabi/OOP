@@ -102,7 +102,7 @@ class Acts extends Action
 				System.out.println("Movie not found.");
 		}
 	}
-	public void displayAllCharacters(Movie movie)
+	public void displayCharacter(Movie movie)
 	{
 		if (actionsArrList.size() == 0) // if the array is empty
 			System.out.println("No Movies Available");
@@ -115,7 +115,7 @@ class Acts extends Action
 					if (actionsArrList.get(i).getMovie() == movie)
 					{
 						found = true;
-						((Acts) actionsArrList.get(i)).getCharacterName();
+						System.out.println(((Acts) actionsArrList.get(i)).getCharacterName());
 					}
 			}
 			if (found == false)

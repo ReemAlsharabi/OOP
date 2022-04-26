@@ -14,6 +14,7 @@ public class Movie
 	private static int numOfMovies = 0;
 	private ArrayList<Director> directorsArrList = new ArrayList<Director>();
 	private ArrayList<String> awardsArrList = new ArrayList<String>();
+	private ArrayList<Acts> actorsArrList = new ArrayList<Acts>();
 	private String quote;
 	private Image poster;
 	
@@ -142,6 +143,15 @@ public class Movie
 	public ArrayList<String> getAwardsArrList()
 	{
 		return awardsArrList;
+	}
+	public void addActor(Actor actor, String role, String characterName)
+	{
+		actorsArrList.add(new Acts(this, actor, role, characterName));
+	}
+	
+	public ArrayList<Acts> getActorsArrList()
+	{
+		return actorsArrList;
 	}
 	@Override
 	public String toString()

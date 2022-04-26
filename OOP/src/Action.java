@@ -4,18 +4,17 @@ public class Action
 {
 	protected Person person;
 	protected Movie movie;
-	protected ArrayList<Action> actionsArrList;
+	protected ArrayList<Action> actionsArrList = new ArrayList<Action>();
 	
 	public Action()
 	{
 		super();
-		actionsArrList = new ArrayList<Action>();
 	}
 	public Action(Movie movie, Person person)
 	{
 		this.movie = movie;
 		this.person = person;
-		actionsArrList =  new ArrayList<Action>();
+		actionsArrList.add(this);
 	}
 	public Person getPerson()
 	{
@@ -55,7 +54,7 @@ public class Action
 				}
 			}
 			if (found == false)
-				System.out.println(person + " Not found.");
+				System.out.println(person.getName() + " Not found.");
 		}
 	}
 	
@@ -77,7 +76,7 @@ public class Action
 				}
 			}
 			if (found == false)
-				System.out.println(movie + " Not found.");
+				System.out.println(movie.getName() + " Not found.");
 		}
 	}
 	
