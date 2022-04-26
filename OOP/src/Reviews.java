@@ -6,7 +6,7 @@ public class Reviews extends Action
 	private double rating;
 	private LocalDate reviewDate;
 	
-	public Reviews(User user, Movie movie, String comment, double rating)
+	public Reviews(Movie movie, User user, String comment, double rating)
 	{
 		super(movie, user);
 		this.comment = comment;
@@ -43,6 +43,7 @@ public class Reviews extends Action
 	{
 		double result = 0;
 		int count = 0;
+
 		for (int i = 0; i < actionsArrList.size(); i++)
 			if (actionsArrList.get(i) instanceof Reviews)
 			{
@@ -55,8 +56,9 @@ public class Reviews extends Action
 	
 	
 	@Override
-	public String toString() {
-		return "Reviews [user=" + person.getName() + ", movie=" + movie.getName() + ", comment=" + comment + ", rating=" + rating + ", reviewDate=" + reviewDate
-				+ "]";
+	public String toString()
+	{
+		return "Reviews [comment=" + comment + ", rating=" + rating + ", reviewDate=" + reviewDate + ", user="
+				+ person + ", movie=" + movie + ", actionsArrList=" + actionsArrList + "]";
 	}
 }
