@@ -30,7 +30,7 @@ public class Admin extends Account {
 		m = new Movie();
 	}
 	
-	public String ChangeUserName(User user){
+	public void ChangeUserName(User user){
 		System.out.println("Enter your old username: ");
 		Scanner input = new Scanner(System.in);
 		String OldUsername = input.nextLine();
@@ -40,17 +40,17 @@ public class Admin extends Account {
 			String newUsername = input.nextLine();
 			try{
 				user.setUsername(newUsername);
-				return "succusfully changed! new username is set to " + newUsername ;
+				System.out.println("succusfully changed! new username is set to " + newUsername) ;
 			}
 			catch(Exception e){
 				System.out.println(e);
 			}
 		}
 		else
-			return "Failed";
+			System.out.println("Failed to change") ;
 	}
 	
-	public String ChangePassword(User user){
+	public void ChangePassword(User user){
 		System.out.println("Enter your old password: ");
 		Scanner input = new Scanner(System.in);
 		String OldPassword = input.nextLine();
@@ -60,7 +60,7 @@ public class Admin extends Account {
 			String newPassword = input.nextLine();
 			try{
 				user.setPassword(newPassword);
-				return "succusfully changed! new password is set to " + newPassword ;
+				System.out.println("succusfully changed! new password is set to " + newPassword) ;
 			}
 			catch(Exception e){
 				System.out.println(e);
@@ -68,18 +68,17 @@ public class Admin extends Account {
 			
 		}
 		else
-				return "Failed" ;	
+				System.out.println("Failed to change") ;	
 	}
 	
-	public void DeleteUser(User user){
-		user =null;
-		System.gc();
+	public User DeleteUser(){
+		return null;           //user1 = admin.DeleteUser()
 	}
 	
-	public void DeleteMovie(Movie m){
-		m =null;
-		System.gc();
+	public Movie DeleteMovie(){
+		return null;
 	}
+}
 
   
-}
+
