@@ -5,21 +5,17 @@ public class Person
 {
 	// data fields
 	protected String name;
-	protected String email;
-	protected String mobile;
 	protected LocalDate birthDate;
 
 	// constructors
 	public Person()
 	{
-		this("", "", "", null);
+		this("", null);
 	}
 
-	public Person(String name, String email, String mobile, LocalDate birthDate)
+	public Person(String name, LocalDate birthDate)
 	{
 		this.name = name;
-		this.email = email;
-		this.mobile = mobile;
 		this.birthDate = birthDate;
 	}
 
@@ -41,37 +37,6 @@ public class Person
 		}
 	}
 
-	public String getEmail()
-	{
-		return email;
-	}
-
-	public void setEmail(String email) throws Exception
-	{
-		boolean checkEmail = email
-				.matches("^[a-zA-Z0-9_+&-]+(?:\\.[a-zA-Z0-9_+&-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$");
-		if (!checkEmail)
-		{
-			throw new Exception("Email is not valid");
-		} else
-			this.email = email;
-	}
-
-	public String getMobile()
-	{
-		return mobile;
-	}
-
-	public void setMobile(String mobile) throws Exception
-	{
-		boolean checkMobile = mobile.matches("05[\\d]{8}");
-		if (!checkMobile)
-		{
-			throw new Exception("Mobile number is not valid");
-		} else
-			this.mobile = mobile;
-	}
-
 	public LocalDate getBirthDate()
 	{
 		return birthDate;
@@ -88,9 +53,9 @@ public class Person
 
 	}
 
-	// methods
+	@Override
 	public String toString()
 	{
-		return "Name: " + name + "\nEmail:" + email + "\nMobile number:" + mobile + "\nBirthDate: " + birthDate;
+		return "Person [name=" + name + ", birthDate=" + birthDate + "]";
 	}
 }

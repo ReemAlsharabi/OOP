@@ -9,13 +9,12 @@ public class User extends Account
 	// constructors
 	public User()
 	{
-		dateCreated = LocalDate.now();
-		AccountNumber += 1;
+		super();
 	}
 
-	public User(String username, String password)
+	public User(String username, String password, String email, String mobile)
 	{
-		super(username, password);
+		super(username, password, email ,mobile);
 	}
 
 	public ArrayList<Reviews> getReview()
@@ -29,9 +28,10 @@ public class User extends Account
 		review.add(new Reviews(movie, user, comment, ratingValue));
 	}
 
+	@Override
 	public String toString()
 	{
-		return super.getUsername() + "reviewing history: " + review;
+		return "User [review=" + review + "]";
 	}
 
 }

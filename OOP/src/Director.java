@@ -3,7 +3,7 @@ import java.time.LocalDate;
 public class Director extends MovieEcosystem
 {
 
-	private static int numOfDirectors;
+	private static int numOfDirectors = 0;
 
 	public Director()
 	{
@@ -25,6 +25,6 @@ public class Director extends MovieEcosystem
 	@Override
 	public String toString()
 	{
-		return super.toString() + "Jop: Director";
+		return "Director [name=" + name + ", email=" + email + ", mobile=" + mobile + ", birthDate=" + birthDate + "]";
 	}
 }

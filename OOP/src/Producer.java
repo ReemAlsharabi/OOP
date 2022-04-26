@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Producer extends MovieEcosystem{
 	
-	private static int numOfProducers;
+	private static int numOfProducers = 0;
 	
 	public Producer() 
 	{
@@ -11,9 +11,9 @@ public class Producer extends MovieEcosystem{
 		numOfProducers += 1;
 	}
 	
-	public Producer(String name, String email, String mobile, LocalDate bDate, String bPlace, String info) 
+	public Producer(String name, LocalDate bDate, String bPlace, String info) 
 	{
-		super(name, email, mobile, bDate, bPlace, info);
+		super(name, bDate, bPlace, info);
 		numOfProducers += 1;
 	}
 	
@@ -23,9 +23,9 @@ public class Producer extends MovieEcosystem{
 	}
 
 	@Override
-	public String toString() 
+	public String toString()
 	{
-		return super.toString() + "Job: Producer";
+		return "Producer [name=" + name + ", birthDate=" + birthDate + "]";
 	}
 	
 }

@@ -18,9 +18,9 @@ public class MovieEcosystem extends Person
 		image = new Image();
 	}
 
-	public MovieEcosystem(String name, String email, String mobile, LocalDate birthDate, String b, String i)
+	public MovieEcosystem(String name, LocalDate birthDate, String b, String i)
 	{
-		super(name, email, mobile, birthDate);
+		super(name, birthDate);
 		birthPlace = b;
 		awards = new ArrayList<String>();
 		info = i;
