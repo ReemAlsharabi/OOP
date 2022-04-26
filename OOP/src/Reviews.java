@@ -5,13 +5,19 @@ public class Reviews extends Action
 	private String comment;
 	private double rating;
 	private LocalDate reviewDate;
+	private static int numOfReviews = 0;
 	
+	public Reviews()
+	{
+		numOfReviews+=1;
+	}
 	public Reviews(Movie movie, User user, String comment, double rating)
 	{
 		super(movie, user);
 		this.comment = comment;
 		this.rating = rating;
 		reviewDate = LocalDate.now();
+		numOfReviews+=1;
 	}
 
 	public String getComment() 
@@ -55,6 +61,10 @@ public class Reviews extends Action
 	}
 	
 	
+	public static int getNumOfReviews()
+	{
+		return numOfReviews;
+	}
 	@Override
 	public String toString()
 	{

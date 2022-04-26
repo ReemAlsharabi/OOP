@@ -15,6 +15,8 @@ public class Movie
 	private ArrayList<Producer> producersArrList = new ArrayList<Producer>();
 	private ArrayList<Writer> writersArrList = new ArrayList<Writer>();
 	private ArrayList<Director> directorsArrList = new ArrayList<Director>();
+	private ArrayList<String> awardsArrList = new ArrayList<String>();
+	private String quote;
 	private Image poster;
 	
 	public Movie()
@@ -162,12 +164,39 @@ public class Movie
 			for (int i = 0; i < directorsArrList.size(); i++)
 				System.out.println(directorsArrList.get(i).getName());
 	}
+	public void addAward(String award)
+	{
+		awardsArrList.add(award);
+	}
+	public void removeAward(String award)
+	{
+		awardsArrList.remove(award);
+	}
+	public void displayAwards()
+	{
+		for (int i = 0; i < awardsArrList.size(); i++)
+			System.out.println(awardsArrList.get(i));
+	}
+	
+	public String getQuote()
+	{
+		return quote;
+	}
+	public void setQuote(String quote)
+	{
+		this.quote = quote;
+	}
+	public ArrayList<String> getAwardsArrList()
+	{
+		return awardsArrList;
+	}
 	
 	@Override
 	public String toString()
 	{
-		return "Movie [id=" + id + ", name=" + name + ", showDate=" + showDate + ", description=" + description
-				+ ", genre=" + genre + ", numOfMovies=" + numOfMovies + ", producersArrList=" + producersArrList + ", writersArrList=" + writersArrList +", directorsArrList=" + directorsArrList +"]";
+		return "Movie [id=" + id + ", name=" + name + ", showDate=" + showDate + ", addedDate=" + addedDate
+				+ ", description=" + description + ", genre=" + genre + ", producersArrList=" + producersArrList
+				+ ", writersArrList=" + writersArrList + ", directorsArrList=" + directorsArrList + ", awardsArrList="
+				+ awardsArrList + ", quote=" + quote + ", poster=" + poster + "]";
 	}
-	
 }
