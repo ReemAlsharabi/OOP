@@ -23,6 +23,7 @@ public class User extends Account
 		return review;
 	}
 
+
 	public void addReviews(User user, Movie movie, String comment, double ratingValue)
 	{
 		review.add(new Reviews(movie, user, comment, ratingValue));
