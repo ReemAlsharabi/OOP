@@ -11,7 +11,7 @@ public class Actor extends MovieEcosystem
 		numOfActors += 1;
 	}
 
-	public Actor(String name, String email, String mobile, LocalDate birthDate, String b, String i)
+	public Actor(String name, LocalDate birthDate, String b, String i)
 	{
 		super(name, birthDate, b, i);
 		numOfActors += 1;

@@ -24,7 +24,7 @@ public class Movie
 		addedDate = LocalDate.now();
 		numOfMovies += 1;
 	}
-	public Movie(String name, LocalDate showDate, String description, String genre, Image poster)
+	public Movie(String name, LocalDate showDate, String description, String genre)
 	{
 		id = UUID.randomUUID().toString();
 		this.name = name;
@@ -33,7 +33,7 @@ public class Movie
 		this.genre = genre;
 		addedDate = LocalDate.now();
 		numOfMovies += 1;
-		this.poster = poster;
+		//this.poster = poster;
 	}
 
 	public String getId()

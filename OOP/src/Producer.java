@@ -1,22 +1,23 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Producer extends MovieEcosystem{
-	
+public class Producer extends MovieEcosystem
+{
+
 	private static int numOfProducers = 0;
-	
-	public Producer() 
+
+	public Producer()
 	{
 		super();
 		numOfProducers += 1;
 	}
-	
-	public Producer(String name, LocalDate bDate, String bPlace, String info) 
+
+	public Producer(String name, LocalDate bDate, String bPlace, String info)
 	{
 		super(name, bDate, bPlace, info);
 		numOfProducers += 1;
 	}
-	
+
 	public int getNumOfProducers()
 	{
 		return numOfProducers;
@@ -27,5 +28,5 @@ public class Producer extends MovieEcosystem{
 	{
 		return "Producer [name=" + name + ", birthDate=" + birthDate + "]";
 	}
-	
+
 }
