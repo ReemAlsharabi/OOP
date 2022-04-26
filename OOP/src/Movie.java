@@ -12,8 +12,6 @@ public class Movie
 	private String description;
 	private String genre;
 	private static int numOfMovies = 0;
-	private ArrayList<Producer> producersArrList = new ArrayList<Producer>();
-	private ArrayList<Writer> writersArrList = new ArrayList<Writer>();
 	private ArrayList<Director> directorsArrList = new ArrayList<Director>();
 	private ArrayList<String> awardsArrList = new ArrayList<String>();
 	private String quote;
@@ -100,62 +98,17 @@ public class Movie
 	{
 		this.poster = poster;
 	}
-	public ArrayList<Producer> getProducersArrList()
-	{
-		return producersArrList;
-	}
-	public ArrayList<Writer> getWritersArrList()
-	{
-		return writersArrList;
-	}
+	
 	public ArrayList<Director> getDirectorsArrList()
 	{
 		return directorsArrList;
-	}
-	
-	public void addProducer(Producer producer)
-	{
-		producersArrList.add(producer);
-	}
-	public void removeProducer(Producer producer)
-	{
-		producersArrList.remove(producer);
-	}
-	
-	public void addWriter(Writer writer)
-	{
-		writersArrList.add(writer);
-	}
-	public void removeWriter(Writer writer)
-	{
-		producersArrList.remove(writer);
 	}
 	
 	public void addDirector(Director director)
 	{
 		directorsArrList.add(director);
 	}
-	public void removeDirector(Director director)
-	{
-		producersArrList.remove(director);
-	}
 	
-	public void displayProducers()
-	{
-		if (producersArrList.size() == 0) // if the array is empty
-			System.out.println(this.getName() + "\'s Producers Not Found.");
-		else
-			for (int i = 0; i < producersArrList.size(); i++)
-				System.out.println(producersArrList.get(i).getName());
-	}
-	public void displayWriters()
-	{
-		if (writersArrList.size() == 0) // if the array is empty
-			System.out.println(this.getName() + "\'s Writers Not Found.");
-		else
-			for (int i = 0; i < writersArrList.size(); i++)
-				System.out.println(writersArrList.get(i).getName());
-	}
 	public void displayDirectors()
 	{
 		if (directorsArrList.size() == 0) // if the array is empty
@@ -190,13 +143,13 @@ public class Movie
 	{
 		return awardsArrList;
 	}
-	
 	@Override
 	public String toString()
 	{
 		return "Movie [id=" + id + ", name=" + name + ", showDate=" + showDate + ", addedDate=" + addedDate
-				+ ", description=" + description + ", genre=" + genre + ", producersArrList=" + producersArrList
-				+ ", writersArrList=" + writersArrList + ", directorsArrList=" + directorsArrList + ", awardsArrList="
-				+ awardsArrList + ", quote=" + quote + ", poster=" + poster + "]";
+				+ ", description=" + description + ", genre=" + genre + ", directorsArrList=" + directorsArrList
+				+ ", awardsArrList=" + awardsArrList + ", quote=" + quote + ", poster=" + poster + "]";
 	}
+	
+	
 }
