@@ -1,10 +1,9 @@
 import java.time.LocalDate;
 import java.util.*;
 
-public class User extends Login
+public class User extends Account
 {
 	// data fields
-	private static int AccountNumber = 0;
 	private ArrayList<Reviews> review = new ArrayList<Reviews>();
 
 	// constructors
@@ -14,19 +13,21 @@ public class User extends Login
 		AccountNumber += 1;
 	}
 
-	// Getters and setters
-
-	public int getAccountNumber()
+	public User(String username, String password)
 	{
-		return AccountNumber;
+		super(username, password);
 	}
 
-	/*
+	public ArrayList<Reviews> getReview()
+	{
+		return review;
+	}
+
 	public void addReviews(User user, Movie movie, String comment, double ratingValue)
 	{
 		review.add(new Reviews(movie, user, comment, ratingValue));
 	}
-	 */
+
 	public String toString()
 	{
 		return super.getUsername() + "reviewing history: " + review;

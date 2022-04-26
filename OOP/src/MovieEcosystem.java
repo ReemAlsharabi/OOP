@@ -8,6 +8,15 @@ public class MovieEcosystem extends Person
 	private ArrayList<String> awards;
 	private String info;
 	private Image image;
+	
+	public MovieEcosystem() 
+	{
+		super();
+		birthPlace = null;
+		awards = new ArrayList<String>();
+		info = null;
+		image = new Image();
+	}
 
 	public MovieEcosystem(String name, String email, String mobile, LocalDate birthDate, String b, String i)
 	{
