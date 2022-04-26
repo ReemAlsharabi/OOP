@@ -12,21 +12,21 @@ public class User extends Account {
     	AccountNumber += 1;
     }
     
-    //Getters and setters
-   
-	public int getAccountNumber(){
-	 return AccountNumber;
+    public User(String username, String password){
+    	super(username,password);
+    }
+    
+    
+	public ArrayList<Reviews> getReview() {
+		return review;
 	}
 
 
-
-
-	/*
 	public void addReviews(User user, Movie movie, String comment, double ratingValue)
 	{
 		review.add(new Reviews(movie, user, comment, ratingValue));
 	}
-	 */
+	 
 	public String toString()
 	{
 		return super.getUsername() + "reviewing history: " + review;

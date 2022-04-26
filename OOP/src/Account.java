@@ -20,6 +20,11 @@ public class Account extends Person{
     	}
 	}
 		
+	public static int getAccountNumber() {
+		return AccountNumber;
+	}
+
+
 	public String getUsername() {
 		return username;
 	}
@@ -50,7 +55,7 @@ public class Account extends Person{
 	
 	public boolean login(String username, String password){
 	   
-		return (this.username.equals(username) && this.password = password);
+		return (this.username.equals(username) && this.password.equals(password));
 		
 	}
 	
