@@ -1,8 +1,9 @@
 import java.time.*;
-public class Main {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+public class Main
+{
+	public static void main(String[] args)
+	{
 		Admin admin = new Admin("AdminAdmin", "adminadmin", "Admin@gmail.com", "0506321951");
 		
 		User user1 = new User("Alsharabi", "reeeeeem", "Reem@gmail.com", "0506321951");
@@ -10,33 +11,57 @@ public class Main {
 		
 		Movie movie = new Movie("Movie1", LocalDate.of(2022, Month.JANUARY, 16), "Movie in 2022", "Action");
 		Movie movie2 = new Movie("Movie2", LocalDate.of(2022, Month.JANUARY, 16), "Movie in 2022", "Action");
-		
+		/*
+		 //Testing Acts
 		Actor actor1 = new Actor("Luke", LocalDate.of(1980, Month.JANUARY, 1), "USA", "Actor");
 		Actor actor2 = new Actor("Someone", LocalDate.of(1980, Month.JANUARY, 1), "USA", "Actor");
 		
-		actor1.addMovie(movie, "Lead", "Someone");
-		actor1.addMovie(movie2, "Lead", "Someone");
+		Action acts1 = new Acts(movie, actor1, "something", "someone");
+		Action acts2 = new Acts(movie, actor2, "something", "someone");
+		Action acts3 = new Acts(movie2, actor1, "something", "someone");
 		
-		actor2.addMovie(movie, "something", "Someone2");
+		Acts.displayAllPersons(movie);
+		System.out.println("---------------");
 		
-		movie2.addActor(actor2, "something2", "Someone22");
+		Acts.displayAllMovies(actor1);
+		System.out.println("---------------");
 		
-		Director director = new Director("Director", "director@gmail.com", "0512345678", LocalDate.of(1990, Month.APRIL, 1), "Canada", "Director");
+		Acts.displayAllCharacters(movie);
+		System.out.println("---------------");
 		
 		
-		MovieEcosystem producer = new Producer("Producer", LocalDate.of(1990, Month.APRIL, 15), "KSA", "Producer");
-		MovieEcosystem writer = new Writer("Writer",  LocalDate.of(1970, Month.JULY, 25), "UAE", "Writer");
-	
+		System.out.println(Acts.getCharacterName(movie2, actor1) + "\n---------------");
 		
-		Reviews review1 = new Reviews(movie, user1, "Amazing", 4.5);
-		Reviews review2 = new Reviews(movie2, user1, "Amazing", 4.5);
-		Reviews review3 = new Reviews(movie, user2, "bad", 4.5);
+		Acts.removeActs(movie2, actor1);
 		
-		for (int i = 0; i < actor1.getMoviesArrList().size(); i++)
-			actor1.getMoviesArrList().get(i).displayAllMovies(actor1);
-		System.out.println("----------");
-		for (int i = 0; i < actor2.getMoviesArrList().size(); i++)
-			actor2.getMoviesArrList().get(i).displayCharacter(movie);
+		Acts.setCharacterName(movie2, actor1, "should be not found");
+		System.out.println("---------------");
+		Acts.setCharacterName(movie, actor1, "Somebody");
+		
+		System.out.println(Acts.getCharacterName(movie, actor1) + "\n---------------");
+		
+		Acts.setRole(movie, actor1, "role");
+		System.out.println(Acts.getRole(movie, actor1) + "\n---------------");
+		*/
+		Action review1 = new Reviews(movie, user1, "Amazing", 5);
+		Action review2 = new Reviews(movie2, user1, "Good", 4.5);
+		Action review3 = new Reviews(movie2, user2, "Bad", 2);
+		
+		System.out.println(Reviews.getNumOfReviews() + "\n---------------");
+		Reviews.displayAllPersons(movie2);
+		System.out.println("---------------");
+		Reviews.displayAllMovies(user1);
+		System.out.println("---------------");
+		//Reviews.removeReview(movie2, user1);
+		Reviews.displayAllMovies(user1);
+		System.out.println("---------------");
+		Reviews.setRating(3, movie2, user2);
+		
+		System.out.println(Reviews.ratingAvg(movie2)+"\n---------------");
+		
+		Reviews.setComment("Fair", movie2, user2);
+		Reviews.displayAllComments(movie2);
+		System.out.println("---------------");
+		Reviews.displayAllComments(user1);
 	}
-
 }

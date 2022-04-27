@@ -14,7 +14,7 @@ class Acts extends Action
 	{
 		return role;
 	}
-	public String getRole(Movie movie)
+	public static String getRole(Movie movie, Actor actor)
 	{
 		String result = "Not found";
 		if (actionsArrList.size() == 0) // if the array is empty
@@ -25,7 +25,8 @@ class Acts extends Action
 			{
 				if (actionsArrList.get(i) instanceof Acts)
 					if (actionsArrList.get(i).getMovie() == movie)
-						result = ((Acts) actionsArrList.get(i)).getRole();
+						if (actionsArrList.get(i).getPerson() == actor)
+							result = ((Acts) actionsArrList.get(i)).getRole();
 			}
 		}
 		return result;
@@ -34,7 +35,7 @@ class Acts extends Action
 	{
 		this.role = role;
 	}
-	public void setRole(Movie movie, String role)
+	public static void setRole(Movie movie, Actor actor, String role)
 	{
 		if (actionsArrList.size() == 0) // if the array is empty
 			System.out.println("No Movies Available");
@@ -45,13 +46,14 @@ class Acts extends Action
 			{
 				if (actionsArrList.get(i) instanceof Acts)
 					if (actionsArrList.get(i).getMovie() == movie)
-					{
-						found = true;
-						((Acts) actionsArrList.get(i)).setRole(role);
-					}
+						if (actionsArrList.get(i).getPerson() == actor)
+						{
+							found = true;
+							((Acts) actionsArrList.get(i)).setRole(role);
+						}
 			}
 			if (found == false)
-				System.out.println("Movie not found.");
+				System.out.println("Movie or Actor not found.");
 		}
 	}
 	
@@ -60,7 +62,7 @@ class Acts extends Action
 		return characterName;
 	}
 	
-	public String getCharacterName(Movie movie)
+	public static String getCharacterName(Movie movie, Actor actor)
 	{
 		String result = "Not found";
 		
@@ -72,7 +74,8 @@ class Acts extends Action
 			{
 				if (actionsArrList.get(i) instanceof Acts)
 					if (actionsArrList.get(i).getMovie() == movie)
-						result = ((Acts) actionsArrList.get(i)).getCharacterName();
+						if (actionsArrList.get(i).getPerson() == actor)
+							result = ((Acts) actionsArrList.get(i)).getCharacterName();
 			}
 		}
 		return result;
@@ -82,7 +85,7 @@ class Acts extends Action
 	{
 		this.characterName = characterName;
 	}
-	public void setCharacterName(Movie movie, String characterName)
+	public static void setCharacterName(Movie movie, Actor actor, String characterName)
 	{
 		if (actionsArrList.size() == 0) // if the array is empty
 			System.out.println("No Movies Available");
@@ -93,16 +96,17 @@ class Acts extends Action
 			{
 				if (actionsArrList.get(i) instanceof Acts)
 					if (actionsArrList.get(i).getMovie() == movie)
-					{
-						found = true;
-						((Acts) actionsArrList.get(i)).setCharacterName(role);
-					}
+						if (actionsArrList.get(i).getPerson() == actor)
+						{
+							found = true;
+							((Acts) actionsArrList.get(i)).setCharacterName(characterName);
+						}
 			}
 			if (found == false)
-				System.out.println("Movie not found.");
+				System.out.println("Movie or Actor not found.");
 		}
 	}
-	public void displayCharacter(Movie movie)
+	public static void displayAllCharacters(Movie movie)
 	{
 		if (actionsArrList.size() == 0) // if the array is empty
 			System.out.println("No Movies Available");
@@ -122,7 +126,27 @@ class Acts extends Action
 				System.out.println("Movie not found.");
 		}
 	}
-	
+	public static void removeActs(Movie movie, Actor actor)
+	{
+		if (actionsArrList.size() == 0) // if the array is empty
+			System.out.println("No Movies Available");
+		else
+		{
+			boolean found = false;
+			for (int i = 0; i < actionsArrList.size(); i++)
+			{
+				if (actionsArrList.get(i) instanceof Acts)
+					if (actionsArrList.get(i).getMovie() == movie)
+						if (actionsArrList.get(i).getPerson() == actor)
+						{
+							found = true;
+							(actionsArrList.get(i)).removeAction();
+						}
+			}
+			if (found == false)
+				System.out.println("Movie or Actor not found.");
+		}
+	}
 	@Override
 	public String toString()
 	{

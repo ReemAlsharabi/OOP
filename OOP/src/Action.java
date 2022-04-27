@@ -4,7 +4,7 @@ public class Action
 {
 	protected Person person;
 	protected Movie movie;
-	protected ArrayList<Action> actionsArrList = new ArrayList<Action>();
+	protected static ArrayList<Action> actionsArrList = new ArrayList<Action>();
 	
 	public Action()
 	{
@@ -38,7 +38,7 @@ public class Action
 	}
 	// method that displays all movies that the passed person has a relation with
 	// example: all movies that user1 reviewed
-	public void displayAllMovies(Person person)
+	public static void displayAllMovies(Person person)
 	{
 		if (actionsArrList.size() == 0) // if the array is empty
 			System.out.println(person.getName() + "\'s Movies Not Found.");
@@ -60,10 +60,10 @@ public class Action
 	
 	// method that displays all persons that the passed movie has a relation with
 	// example: all reviewers of movie1
-	public void displayAllPersons(Movie movie)
+	public static void displayAllPersons(Movie movie)
 	{
 		if (actionsArrList.size() == 0) // if the array is empty
-			System.out.println(person.getName() + "\'s Persons Not Found.");
+			System.out.println(movie.getName() + "\'s Persons Not Found.");
 		else
 		{
 			boolean found = false;
@@ -79,7 +79,10 @@ public class Action
 				System.out.println(movie.getName() + " Not found.");
 		}
 	}
-	
+	public void removeAction()
+	{
+		actionsArrList.remove(this);
+	}
 	@Override
 	public String toString()
 	{
