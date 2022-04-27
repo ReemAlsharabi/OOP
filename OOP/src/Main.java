@@ -1,11 +1,9 @@
-import java.time.LocalDate;
-import java.time.Month;
 
-public class Main
-{
-	public static void main(String[] args)
-	{
-		Admin admin = new Admin("AdminAdmin", "adminadmin", "Admin@gmail.com", "0506321951");
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Admin admin = new Admin("AdminAdmin", "adminadmin", "Admin@gmail.com", "0506321951");
 		
 		User user1 = new User("Alsharabi", "reeeeeem", "Reem@gmail.com", "0506321951");
 		User user2 = new User("Reeeem", "reeeeeem", "Reem@gmail.com", "0506321951");
@@ -39,6 +37,6 @@ public class Main
 		System.out.println("----------");
 		for (int i = 0; i < actor2.getMoviesArrList().size(); i++)
 			actor2.getMoviesArrList().get(i).displayCharacter(movie);
-		
 	}
+
 }
