@@ -10,9 +10,9 @@ public class Admin extends Account
 		dateCreated = LocalDate.now();
 	}
 
-	public Admin(String username, String password, String email, String mobile)
+	public Admin(String name, LocalDate birthDate, String username, String password, String email, String mobile)
 	{
-		super(username, password, email, mobile);
+		super(name, birthDate, username, password, email, mobile);
 	}
 
 	public void ShowAdminMenu()

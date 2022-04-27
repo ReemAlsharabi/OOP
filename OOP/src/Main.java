@@ -4,10 +4,12 @@ public class Main
 {
 	public static void main(String[] args)
 	{
-		Admin admin = new Admin("AdminAdmin", "adminadmin", "Admin@gmail.com", "0506321951");
+		Admin admin = new Admin("Admin", LocalDate.of(2022, Month.JANUARY, 16), "AdminAdmin", "adminadmin", "Admin@gmail.com", "0506321951");
 		
-		User user1 = new User("Alsharabi", "reeeeeem", "Reem@gmail.com", "0506321951");
-		User user2 = new User("Reeeem", "reeeeeem", "Reem@gmail.com", "0506321951");
+		User user1 = new User("Aicha Sidiya", LocalDate.of(2022, Month.JANUARY, 16), "Alsharabi", "reeeeeem", "Reem@gmail.com", "0506321951");
+		User user2 = new User("Reem Alahrabi", LocalDate.of(2022, Month.JANUARY, 16), "Reeeem", "reeeeeem", "Reem@gmail.com", "0506321951");
+		
+		System.out.println(user1);
 		
 		Movie movie = new Movie("Movie1", LocalDate.of(2022, Month.JANUARY, 16), "Movie in 2022", "Action");
 		Movie movie2 = new Movie("Movie2", LocalDate.of(2022, Month.JANUARY, 16), "Movie in 2022", "Action");

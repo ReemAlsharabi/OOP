@@ -12,9 +12,9 @@ public class User extends Account
 		super();
 	}
 
-	public User(String username, String password, String email, String mobile)
+	public User(String name, LocalDate birthDate, String username, String password, String email, String mobile)
 	{
-		super(username, password, email ,mobile);
+		super(name, birthDate, username, password, email ,mobile);
 	}
 
 	

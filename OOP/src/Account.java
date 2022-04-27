@@ -15,8 +15,9 @@ public class Account extends Person
 		dateCreated = LocalDate.now();
 	}
 
-	public Account(String username, String password, String email, String mobile)
+	public Account(String name, LocalDate birthDate, String username, String password, String email, String mobile)
 	{
+		super(name, birthDate);
 		try
 		{
 			setUsername(username);
