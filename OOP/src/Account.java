@@ -62,7 +62,7 @@ public class Account extends Person
 			this.mobile = mobile;
 	}
 	
-	public static int getAccountNumber()
+	public static int numOfAccounts()
 	{
 		return numOfAccounts;
 	}

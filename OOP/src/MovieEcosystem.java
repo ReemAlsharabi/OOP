@@ -35,7 +35,7 @@ public class MovieEcosystem extends Person
 		this.birthPlace = birthPlace;
 	}
 
-	public ArrayList getAwards()
+	public ArrayList<String> getAwards()
 	{
 		return awards;
 	}

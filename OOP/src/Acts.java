@@ -3,6 +3,7 @@ class Acts extends Action
 	private String role;
 	private String characterName;
 	
+	public Acts() {}
 	public Acts(Movie movie, Actor actor, String role, String characterName)
 	{
 		super(movie, actor);

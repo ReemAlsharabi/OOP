@@ -93,7 +93,7 @@ public class Reviews extends Action
 	{
 		this.reviewDate = reviewDate;
 	}
-	public static double ratingAvg(Movie movie)
+	public static double getRatingAvg(Movie movie)
 	{
 		double result = 0;
 		int count = 0;
