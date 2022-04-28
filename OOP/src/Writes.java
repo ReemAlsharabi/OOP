@@ -1,4 +1,5 @@
 public class Writes extends Action{
+	
 	private String writtingStyle;
 	
 	public Writes(Movie movie, Writer writes, String writtingStyle)
@@ -11,18 +12,20 @@ public class Writes extends Action{
 	{
 		return writtingStyle;
 	}
-	public String getWrittingStyle(Movie movie)
+	public static String getWrittingStyle(Movie movie, Actor actor)
 	{
-		boolean found = false;
 		String result = "Not found";
-		for (int i = 0; i < actionsArrList.size(); i++)
+		if (actionsArrList.size() == 0) // if the array is empty
+			result = "No Movies Available";
+		else
 		{
-			if (actionsArrList.get(i) instanceof Writer)
-				if (actionsArrList.get(i).getMovie() == movie);
-				{
-					found = true;
-					result = ((Writes) actionsArrList.get(i)).getWrittingStyle();
-				}
+			for (int i = 0; i < actionsArrList.size(); i++)
+			{
+				if (actionsArrList.get(i) instanceof Writes)
+					if (actionsArrList.get(i).getMovie() == movie)
+						if (actionsArrList.get(i).getPerson() == actor)
+							result = ((Writes) actionsArrList.get(i)).getWrittingStyle();
+			}
 		}
 		return result;
 	}
@@ -30,20 +33,26 @@ public class Writes extends Action{
 	{
 		this.writtingStyle = writtingStyle;
 	}
-	public void setWrittingStyle(Movie movie, String writtingStyle)
+	public static void setWrittingStyle(Movie movie, Actor actor, String writtingStyle)
 	{
-		boolean found = false;
-		for (int i = 0; i < actionsArrList.size(); i++)
+		if (actionsArrList.size() == 0) // if the array is empty
+			System.out.println("No Movies Available");
+		else
 		{
-			if (actionsArrList.get(i) instanceof Writes)
-				if (actionsArrList.get(i).getMovie() == movie);
-				{
-					found = true;
-					((Writes) actionsArrList.get(i)).setWrittingStyle(writtingStyle);
-				}
+			boolean found = false;
+			for (int i = 0; i < actionsArrList.size(); i++)
+			{
+				if (actionsArrList.get(i) instanceof Writes)
+					if (actionsArrList.get(i).getMovie() == movie)
+						if (actionsArrList.get(i).getPerson() == actor)
+						{
+							found = true;
+							((Writes) actionsArrList.get(i)).setWrittingStyle(writtingStyle);
+						}
+			}
+			if (found == false)
+				System.out.println("Movie or Actor not found.");
 		}
-		if (found == false)
-			System.out.println("Movie not found.");
 	}	
 
 	@Override

@@ -4,18 +4,17 @@ public class Action
 {
 	protected Person person;
 	protected Movie movie;
-	protected ArrayList<Action> actionsArrList;
+	protected static ArrayList<Action> actionsArrList = new ArrayList<Action>();
 	
 	public Action()
 	{
 		super();
-		actionsArrList = new ArrayList<Action>();
 	}
 	public Action(Movie movie, Person person)
 	{
 		this.movie = movie;
 		this.person = person;
-		actionsArrList =  new ArrayList<Action>();
+		actionsArrList.add(this);
 	}
 	public Person getPerson()
 	{
@@ -39,7 +38,7 @@ public class Action
 	}
 	// method that displays all movies that the passed person has a relation with
 	// example: all movies that user1 reviewed
-	public void displayAllMovies(Person person)
+	public static void displayAllMovies(Person person)
 	{
 		if (actionsArrList.size() == 0) // if the array is empty
 			System.out.println(person.getName() + "\'s Movies Not Found.");
@@ -55,16 +54,16 @@ public class Action
 				}
 			}
 			if (found == false)
-				System.out.println(person + " Not found.");
+				System.out.println(person.getName() + " Not found.");
 		}
 	}
 	
 	// method that displays all persons that the passed movie has a relation with
 	// example: all reviewers of movie1
-	public void displayAllPersons(Movie movie)
+	public static void displayAllPersons(Movie movie)
 	{
 		if (actionsArrList.size() == 0) // if the array is empty
-			System.out.println(person.getName() + "\'s Persons Not Found.");
+			System.out.println(movie.getName() + "\'s Persons Not Found.");
 		else
 		{
 			boolean found = false;
@@ -77,10 +76,13 @@ public class Action
 				}
 			}
 			if (found == false)
-				System.out.println(movie + " Not found.");
+				System.out.println(movie.getName() + " Not found.");
 		}
 	}
-	
+	public void removeAction()
+	{
+		actionsArrList.remove(this);
+	}
 	@Override
 	public String toString()
 	{

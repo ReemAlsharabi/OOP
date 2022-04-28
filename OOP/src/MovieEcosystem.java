@@ -5,26 +5,24 @@ import java.util.ArrayList;
 public class MovieEcosystem extends Person
 {
 	private String birthPlace;
-	private ArrayList<String> awards;
+	private ArrayList<String> awards = new ArrayList<String>();
 	private String info;
 	private Image image;
 	
 	public MovieEcosystem() 
 	{
 		super();
-		birthPlace = null;
-		awards = new ArrayList<String>();
+		birthPlace = null; 
 		info = null;
-		image = new Image();
+		//image = new Image();
 	}
 
-	public MovieEcosystem(String name, String email, String mobile, LocalDate birthDate, String b, String i)
+	public MovieEcosystem(String name, LocalDate birthDate, String b, String i)
 	{
-		super(name, email, mobile, birthDate);
+		super(name, birthDate);
 		birthPlace = b;
-		awards = new ArrayList<String>();
 		info = i;
-		image = new Image();
+		//image = new Image();
 	}
 
 	public String getBirthPlace()
@@ -37,7 +35,7 @@ public class MovieEcosystem extends Person
 		this.birthPlace = birthPlace;
 	}
 
-	public ArrayList getAwards()
+	public ArrayList<String> getAwards()
 	{
 		return awards;
 	}

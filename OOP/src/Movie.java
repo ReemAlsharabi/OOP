@@ -12,9 +12,9 @@ public class Movie
 	private String description;
 	private String genre;
 	private static int numOfMovies = 0;
-	private ArrayList<Producer> producersArrList = new ArrayList<Producer>();
-	private ArrayList<Writer> writersArrList = new ArrayList<Writer>();
 	private ArrayList<Director> directorsArrList = new ArrayList<Director>();
+	private ArrayList<String> awardsArrList = new ArrayList<String>();
+	private String quote;
 	private Image poster;
 	
 	public Movie()
@@ -24,7 +24,7 @@ public class Movie
 		addedDate = LocalDate.now();
 		numOfMovies += 1;
 	}
-	public Movie(String name, LocalDate showDate, String description, String genre, Image poster)
+	public Movie(String name, LocalDate showDate, String description, String genre, Image poster, String quote, String award, Director director)
 	{
 		id = UUID.randomUUID().toString();
 		this.name = name;
@@ -34,6 +34,10 @@ public class Movie
 		addedDate = LocalDate.now();
 		numOfMovies += 1;
 		this.poster = poster;
+		this.quote = quote;
+		awardsArrList.add(award);
+		directorsArrList.add(director);
+		
 	}
 
 	public String getId()
@@ -90,70 +94,25 @@ public class Movie
 		return numOfMovies;
 	}
 	
-	public ImageType getPoster()
+	public Image getPoster()
 	{
 		return poster;
 	}
-	public void setPoster(ImageType poster)
+	public void setPoster(Image poster)
 	{
 		this.poster = poster;
 	}
-	public ArrayList<Producer> getProducersArrList()
-	{
-		return producersArrList;
-	}
-	public ArrayList<Writer> getWritersArrList()
-	{
-		return writersArrList;
-	}
+	
 	public ArrayList<Director> getDirectorsArrList()
 	{
 		return directorsArrList;
 	}
 	
-	public void addProducer(Producer producer)
-	{
-		producersArrList.add(producer);
-	}
-	public void removeProducer(Producer producer)
-	{
-		producersArrList.remove(producer);
-	}
-	
-	public void addWriter(Writer writer)
-	{
-		producersArrList.add(writer);
-	}
-	public void removeWriter(Writer writer)
-	{
-		producersArrList.remove(writer);
-	}
-	
 	public void addDirector(Director director)
 	{
-		producersArrList.add(director);
-	}
-	public void removeDirector(Director director)
-	{
-		producersArrList.remove(director);
+		directorsArrList.add(director);
 	}
 	
-	public void displayProducers()
-	{
-		if (producersArrList.size() == 0) // if the array is empty
-			System.out.println(this.getName() + "\'s Producers Not Found.");
-		else
-			for (int i = 0; i < producersArrList.size(); i++)
-				System.out.println(producersArrList.get(i).getName());
-	}
-	public void displayWriters()
-	{
-		if (writersArrList.size() == 0) // if the array is empty
-			System.out.println(this.getName() + "\'s Writers Not Found.");
-		else
-			for (int i = 0; i < writersArrList.size(); i++)
-				System.out.println(writersArrList.get(i).getName());
-	}
 	public void displayDirectors()
 	{
 		if (directorsArrList.size() == 0) // if the array is empty
@@ -162,12 +121,40 @@ public class Movie
 			for (int i = 0; i < directorsArrList.size(); i++)
 				System.out.println(directorsArrList.get(i).getName());
 	}
+	public void addAward(String award)
+	{
+		awardsArrList.add(award);
+	}
+	public void removeAward(String award)
+	{
+		awardsArrList.remove(award);
+	}
+	public void displayAwards()
+	{
+		for (int i = 0; i < awardsArrList.size(); i++)
+			System.out.println(awardsArrList.get(i));
+	}
+	
+	public String getQuote()
+	{
+		return quote;
+	}
+	public void setQuote(String quote)
+	{
+		this.quote = quote;
+	}
+	public ArrayList<String> getAwardsArrList()
+	{
+		return awardsArrList;
+	}
 	
 	@Override
 	public String toString()
 	{
-		return "Movie [id=" + id + ", name=" + name + ", showDate=" + showDate + ", description=" + description
-				+ ", genre=" + genre + ", numOfMovies=" + numOfMovies + ", producersArrList=" + producersArrList + ", writersArrList=" + writersArrList +", directorsArrList=" + directorsArrList +"]";
+		return "Movie [id=" + id + ", name=" + name + ", showDate=" + showDate + ", addedDate=" + addedDate
+				+ ", description=" + description + ", genre=" + genre + ", directorsArrList=" + directorsArrList
+				+ ", awardsArrList=" + awardsArrList + ", quote=" + quote + ", poster=" + poster + "]";
 	}
+	
 	
 }

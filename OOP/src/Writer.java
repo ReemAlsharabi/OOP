@@ -2,7 +2,7 @@ import java.time.LocalDate;
 
 public class Writer extends MovieEcosystem{
 	
-	private static int numOfWriters;
+	private static int numOfWriters = 0;
 	
 	public Writer() 
 	{
@@ -10,9 +10,9 @@ public class Writer extends MovieEcosystem{
 		numOfWriters += 1;
 	}
 	
-	public Writer(String name, String email, String mobile, LocalDate bDate, String bPlace, String info) 
+	public Writer(String name, LocalDate bDate, String bPlace, String info) 
 	{
-		super(name, email, mobile, bDate, bPlace, info);
+		super(name, bDate, bPlace, info);
 		numOfWriters += 1;
 	}
 	
@@ -23,8 +23,9 @@ public class Writer extends MovieEcosystem{
 	}
 
 	@Override
-	public String toString() {
-		return super.toString() + "Jop: Writer";
+	public String toString()
+	{
+		return "Writer [name=" + name + ", birthDate=" + birthDate + "]";
 	}
 	
 }
