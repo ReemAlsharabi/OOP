@@ -16,6 +16,7 @@ public class Writer extends MovieEcosystem{
 		numOfWriters += 1;
 	}
 	
+	
 	public static int getNumOfWriters()
 	{
 		return numOfWriters;
