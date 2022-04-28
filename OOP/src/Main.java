@@ -11,8 +11,8 @@ public class Main
 		
 		System.out.println(user1);
 		
-		Movie movie = new Movie("Movie1", LocalDate.of(2022, Month.JANUARY, 16), "Movie in 2022", "Action");
-		Movie movie2 = new Movie("Movie2", LocalDate.of(2022, Month.JANUARY, 16), "Movie in 2022", "Action");
+		Movie movie = new Movie("Movie1", LocalDate.of(2022, Month.JANUARY, 16), "Movie in 2022", "Action", /*image*/, "quote", "Award", "director");
+		Movie movie2 = new Movie("Movie2", LocalDate.of(2022, Month.JANUARY, 16), "Movie in 2022", "Action", /*image*/, "quote", "Award", "director");
 		/*
 		 //Testing Acts
 		Actor actor1 = new Actor("Luke", LocalDate.of(1980, Month.JANUARY, 1), "USA", "Actor");
@@ -59,7 +59,7 @@ public class Main
 		System.out.println("---------------");
 		Reviews.setRating(3, movie2, user2);
 		
-		System.out.println(Reviews.ratingAvg(movie2)+"\n---------------");
+		System.out.println(Reviews.getRatingAvg(movie2)+"\n---------------");
 		
 		Reviews.setComment("Fair", movie2, user2);
 		Reviews.displayAllComments(movie2);
