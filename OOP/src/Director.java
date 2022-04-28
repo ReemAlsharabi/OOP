@@ -16,13 +16,8 @@ public class Director extends MovieEcosystem
 		super(name, bDate, bPlace, info);
 		numOfDirectors += 1;
 	}
-<<<<<<< HEAD
-	
-	public static int getNumOfDirectors()
-=======
 
 	public int getNumOfDirectors()
->>>>>>> branch 'master' of https://github.com/ReemCodes/OOP.git
 	{
 		return numOfDirectors;
 		

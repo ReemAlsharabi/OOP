@@ -17,13 +17,8 @@ public class Producer extends MovieEcosystem
 		super(name, bDate, bPlace, info);
 		numOfProducers += 1;
 	}
-<<<<<<< HEAD
-	
-	public static int getNumOfProducers()
-=======
 
 	public int getNumOfProducers()
->>>>>>> branch 'master' of https://github.com/ReemCodes/OOP.git
 	{
 		return numOfProducers;
 	}
@@ -33,11 +28,4 @@ public class Producer extends MovieEcosystem
 	{
 		return "Producer [name=" + name + ", birthDate=" + birthDate + "]";
 	}
-<<<<<<< HEAD
-	
-	
 }
-=======
-
-}
->>>>>>> branch 'master' of https://github.com/ReemCodes/OOP.git

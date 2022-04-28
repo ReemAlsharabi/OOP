@@ -10,9 +10,9 @@ public class Main
 		User user2 = new User("Reem Alahrabi", LocalDate.of(2022, Month.JANUARY, 16), "Reeeem", "reeeeeem", "Reem@gmail.com", "0506321951");
 		
 		System.out.println(user1);
-		
-		Movie movie = new Movie("Movie1", LocalDate.of(2022, Month.JANUARY, 16), "Movie in 2022", "Action", /*image*/, "quote", "Award", "director");
-		Movie movie2 = new Movie("Movie2", LocalDate.of(2022, Month.JANUARY, 16), "Movie in 2022", "Action", /*image*/, "quote", "Award", "director");
+		Director director1 = new Director("name", "Email", "0567890123", LocalDate.of(2022, Month.JANUARY, 16), "bPlace", "info");
+		Movie movie = new Movie("Movie1", LocalDate.of(2022, Month.JANUARY, 16), "Movie in 2022", "Action",  "quote", "Award", director1);
+		Movie movie2 = new Movie("Movie2", LocalDate.of(2022, Month.JANUARY, 16), "Movie in 2022", "Action", "quote", "Award", director1);
 		/*
 		 //Testing Acts
 		Actor actor1 = new Actor("Luke", LocalDate.of(1980, Month.JANUARY, 1), "USA", "Actor");
