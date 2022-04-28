@@ -16,7 +16,7 @@ public class Director extends MovieEcosystem{
 		numOfDirectors +=1;
 	}
 	
-	public int getNumOfDirectors()
+	public static int getNumOfDirectors()
 	{
 		return numOfDirectors;
 	}

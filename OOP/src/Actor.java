@@ -16,7 +16,7 @@ public class Actor extends MovieEcosystem{
 		numOfActors += 1;
 	}
 	
-	public int getNumOfActors()
+	public static int getNumOfActors()
 	{
 		return numOfActors;
 	}

@@ -17,7 +17,7 @@ public class Producer extends MovieEcosystem{
 		numOfProducers += 1;
 	}
 	
-	public int getNumOfProducers()
+	public static int getNumOfProducers()
 	{
 		return numOfProducers;
 	}
