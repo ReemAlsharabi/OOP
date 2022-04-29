@@ -16,6 +16,7 @@ public class Movie
 	private ArrayList<String> awardsArrList = new ArrayList<String>();
 	private String quote;
 	private Image poster;
+	private ArrayList<Image> imageArrList = new ArrayList<Image>();
 	
 	public Movie()
 	{
@@ -127,6 +128,15 @@ public class Movie
 		directorsArrList.add(director);
 	}
 	
+	public ArrayList<Image> getImageArrayList()
+	{
+		return imageArrList;
+	}
+	
+	public void addImageArrList(Image image)
+	{
+		imageArrList.add(image);
+	}
 	public void displayDirectors()
 	{
 		if (directorsArrList.size() == 0) // if the array is empty

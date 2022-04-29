@@ -30,9 +30,9 @@ public class Admin extends Account
 		u = new User();
 	}
 
-	public void AddMovie(Movie m)
+	public void AddMovie(Movie m, String name, LocalDate showDate, String description, String genre,  String quote, String award, Director director)
 	{
-		m = new Movie();
+		m = new Movie(name, showDate, description, genre, quote, award, director);
 	}
 
 	public void ChangeUserName(User user)
