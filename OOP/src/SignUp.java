@@ -165,9 +165,9 @@ public class SignUp extends JFrame {
 				
 				try {
 					Class.forName("com.mysql.cj.jdbc.Driver");
-					Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/MovieDatabase", "root","");
+					Connection con = DriverManager.getConnection("jdbc:mysql://localhost/MovieDatabase", "root","");
 					Statement stmt = con.createStatement();
-					String sql = "INSERT IGNORE INTO account (username,password,name,email,phone,accType,DoB,dateCreated) VALUES (Username, Password, Name, Email, Phone, accType, dob, dateCreated)";
+					String sql = "INSERT INTO account (username,password,name,email,phone,accType,DoB,dateCreated) VALUES ('"+Username+"', '"+Password+"', '"+Name+"', '"+Email+"', '"+Phone+"', '"+accType+"', '"+dob+"', '"+dateCreated+"')";
 					PreparedStatement create = con.prepareStatement(sql);
 					create.executeUpdate(sql);
 					stmt.executeQuery(sql);
