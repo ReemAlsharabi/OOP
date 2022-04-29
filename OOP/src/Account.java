@@ -25,6 +25,7 @@ public class Account extends Person
 		} catch (Exception e)
 		{
 			System.out.println(e);
+			
 		}
 		dateCreated = LocalDate.now();
 		this.email = email;

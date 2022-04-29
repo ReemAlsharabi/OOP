@@ -1,7 +1,7 @@
 import java.util.*;
 import java.time.LocalDate;
 
-public class Person
+public abstract class Person
 {
 	// data fields
 	protected String name;
@@ -42,12 +42,13 @@ public class Person
 		return birthDate;
 	}
 
-	public void setBirthDate(LocalDate birthDate)
+	public void setBirthDate(LocalDate birthDate) throws Exception
 	{
 		boolean checkDate = (birthDate.toString()).matches("^(3[01]|[12][0-9]|0[1-9])/(1[0-2]|0[1-9])/[0-9]{4}$");// DD/MM/YYYY
 		if (!checkDate)
 		{
-			System.out.println("Date is not valid");
+			throw new Exception("Date is not valid");
+			
 		} else
 			this.birthDate = birthDate;
 
