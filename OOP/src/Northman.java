@@ -69,10 +69,10 @@ public class Northman extends JFrame {
 		label.setBounds(31, 0, 138, 39);
 		panel.add(label);
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Program Files\\Java\\jre1.8.0_321\\bin\\b3.jpeg"));
-		lblNewLabel.setBounds(31, 71, 196, 282);
-		contentPane.add(lblNewLabel);
+		JLabel poster = new JLabel("New label");
+		poster.setIcon(new ImageIcon("C:\\Program Files\\Java\\jre1.8.0_321\\bin\\b3.jpeg"));
+		poster.setBounds(31, 71, 196, 282);
+		contentPane.add(poster);
 		
 		JLabel genre = new JLabel("Action ");
 		genre.setForeground(Color.WHITE);
@@ -101,14 +101,14 @@ public class Northman extends JFrame {
 		label_1.setBounds(258, 241, 138, 39);
 		contentPane.add(label_1);
 		
-		JTextArea Discrebtion = new JTextArea();
-		Discrebtion.setFont(new Font("Monospaced", Font.PLAIN, 17));
-		Discrebtion.setBackground(Color.DARK_GRAY);
-		Discrebtion.setForeground(Color.WHITE);
-		Discrebtion.setToolTipText("From visionary director Robert Eggers comes \r\nThe Northman, an action-filled epic that follows \r\na young Viking prince on his quest to avenge\r\n his father's murder");
-		Discrebtion.setText("From visionary director Robert Eggers comes \r\nThe Northman, an action-filled epic that follows a \r\nyoung Viking prince on his quest to avenge \r\nhis father's murder");
-		Discrebtion.setBounds(239, 153, 308, 107);
-		contentPane.add(Discrebtion);
+		JTextArea Description = new JTextArea();
+		Description.setFont(new Font("Monospaced", Font.PLAIN, 17));
+		Description.setBackground(Color.DARK_GRAY);
+		Description.setForeground(Color.WHITE);
+		Description.setToolTipText("From visionary director Robert Eggers comes \r\nThe Northman, an action-filled epic that follows \r\na young Viking prince on his quest to avenge\r\n his father's murder");
+		Description.setText("From visionary director Robert Eggers comes \r\nThe Northman, an action-filled epic that follows a \r\nyoung Viking prince on his quest to avenge \r\nhis father's murder");
+		Description.setBounds(239, 153, 308, 107);
+		contentPane.add(Description);
 		
 		JLabel lblDirector = new JLabel("director: ");
 		lblDirector.setFont(new Font("Tahoma", Font.PLAIN, 34));
@@ -155,6 +155,31 @@ public class Northman extends JFrame {
 		lblSjn.setFont(new Font("Tahoma", Font.PLAIN, 32));
 		lblSjn.setBounds(280, 498, 78, 39);
 		contentPane.add(lblSjn);
+		/////////////////////////////////////////////////////////////
+		int userRate = parseInt(UserRate.getText());
+		Movie northman = new Movie();
+		Director director = new Director();
+		User user = new User();
+		Action review = new Reviews(northman,user,"good",userRate);
+		northman.setName("The Northman");
+		northman.setGenre(genre.getText());
+		northman.setGenre(genre2.getText());
+		northman.setDescription(Description.getText());
+		try{
+		  director.setName(Directorname.getText());
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+		//northman.addImageArrList(poster.toImage(true));
+		
+		
+		/////////////////////////////////////////////////////////////
+	}
+
+	private int parseInt(String text) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 
