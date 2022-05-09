@@ -22,14 +22,15 @@ public class Account extends Person
 		{
 			setUsername(username);
 			setPassword(password);
+			setEmail(email);
+			setMobile(mobile);
 		} catch (Exception e)
 		{
 			System.out.println(e);
 			
 		}
 		dateCreated = LocalDate.now();
-		this.email = email;
-		this.mobile = mobile;
+		
 	}
 	
 	public String getEmail()
