@@ -6,15 +6,22 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.time.LocalDate;
 import java.awt.Font;
 import javax.swing.JTextArea;
 import java.awt.SystemColor;
-
+import java.awt.Image;
 
 public class Northman extends JFrame {
 
@@ -171,9 +178,6 @@ public class Northman extends JFrame {
 		catch(Exception e){
 			System.out.println(e);
 		}
-		//northman.addImageArrList(poster.toImage(true));
-		
-		
 		/////////////////////////////////////////////////////////////
 	}
 

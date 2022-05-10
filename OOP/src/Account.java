@@ -20,10 +20,10 @@ public class Account extends Person
 	public Account(String name, LocalDate birthDate, String username, String password, String email, String mobile) throws Exception
 	{
 		super(name, birthDate);
-			setUsername(username);
-			setPassword(password);
-			setEmail(email);
-			setMobile(mobile);
+		setUsername(username);
+		setPassword(password);
+		setEmail(email);
+		setMobile(mobile);
 		dateCreated = LocalDate.now();
 		
 	}
