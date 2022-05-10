@@ -1,8 +1,9 @@
 import java.awt.BorderLayout;
+import java.awt.Image;
 
 import java.sql.*;
 import java.awt.EventQueue;
-
+import java.awt.image.*;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -117,9 +118,11 @@ public class SignIn extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblNewLabel_3 = new JLabel("New label");
-		lblNewLabel_3.setIcon(new ImageIcon("C:\\Program Files\\Java\\jre1.8.0_321\\bin\\movie.png"));
-		lblNewLabel_3.setBounds(23, 33, 138, 627);
+		JLabel lblNewLabel_3 = new JLabel("");
+		//lblNewLabel_3.setIcon(new ImageIcon("C:\\Program Files\\Java\\jre1.8.0_321\\bin\\movie.png"));
+		Image img = new ImageIcon (this.getClass().getResource("/movie.png")).getImage();
+		lblNewLabel_3.setIcon(new ImageIcon(img));
+		lblNewLabel_3.setBounds(0, 0, 192, 679);
 		panel.add(lblNewLabel_3);
 		
 		JLabel lblNewToMovie = new JLabel("create a new account? SIGN UP now");

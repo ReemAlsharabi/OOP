@@ -1,5 +1,6 @@
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.Image;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -54,10 +55,10 @@ public class HomePage extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Program Files\\Java\\jre1.8.0_321\\bin\\search.png"));
-		lblNewLabel.setBounds(-35, 872, 66, 66);
-		panel.add(lblNewLabel);
+//		JLabel lblNewLabel = new JLabel("New label");
+//		lblNewLabel.setIcon(new ImageIcon("C:\\Program Files\\Java\\jre1.8.0_321\\bin\\search.png"));
+//		lblNewLabel.setBounds(-35, 872, 66, 66);
+//		panel.add(lblNewLabel);
 		
 		JLabel lblSearchMovie = new JLabel("Search Movie");
 		lblSearchMovie.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -84,7 +85,9 @@ public class HomePage extends JFrame {
 			}
 		});
 
-		label.setIcon(new ImageIcon("C:\\Program Files\\Java\\jre1.8.0_321\\bin\\b3.jpeg"));
+		//label.setIcon(new ImageIcon("C:\\Program Files\\Java\\jre1.8.0_321\\bin\\b3.jpeg"));
+		Image img = new ImageIcon (this.getClass().getResource("/movie1.jpeg")).getImage();
+		label.setIcon(new ImageIcon(img));
 		label.setBounds(49, 102, 166, 225);
 		contentPane.add(label);
 		
@@ -98,7 +101,9 @@ public class HomePage extends JFrame {
 				dispose();
 			}
 		});
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Program Files\\Java\\jre1.8.0_321\\bin\\b4.jpeg"));
+		//lblNewLabel_1.setIcon(new ImageIcon("C:\\Program Files\\Java\\jre1.8.0_321\\bin\\b4.jpeg"));
+		Image img1 = new ImageIcon (this.getClass().getResource("/movie2.jpeg")).getImage();
+		lblNewLabel_1.setIcon(new ImageIcon(img1));
 		lblNewLabel_1.setBounds(59, 375, 150, 233);
 		contentPane.add(lblNewLabel_1);
 		
@@ -112,7 +117,9 @@ public class HomePage extends JFrame {
 				dispose();
 			}
 		});
-		lblNewLabel_2.setIcon(new ImageIcon("C:\\Program Files\\Java\\jre1.8.0_321\\bin\\b6.jpeg"));
+		//lblNewLabel_2.setIcon(new ImageIcon("C:\\Program Files\\Java\\jre1.8.0_321\\bin\\b6.jpeg"));
+		Image img2 = new ImageIcon (this.getClass().getResource("/movie3.jpeg")).getImage();
+		lblNewLabel_2.setIcon(new ImageIcon(img2));
 		lblNewLabel_2.setBounds(360, 102, 166, 225);
 		contentPane.add(lblNewLabel_2);
 		
@@ -126,7 +133,9 @@ public class HomePage extends JFrame {
 				dispose();
 			}
 		});
-		lblNewLabel_3.setIcon(new ImageIcon("C:\\Program Files\\Java\\jre1.8.0_321\\bin\\b7.jpeg"));
+		//lblNewLabel_3.setIcon(new ImageIcon("C:\\Program Files\\Java\\jre1.8.0_321\\bin\\b7.jpeg"));
+		Image img3 = new ImageIcon (this.getClass().getResource("/movie4.jpeg")).getImage();
+		lblNewLabel_3.setIcon(new ImageIcon(img3));
 		lblNewLabel_3.setBounds(360, 379, 166, 225);
 		contentPane.add(lblNewLabel_3);
 		

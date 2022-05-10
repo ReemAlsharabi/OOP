@@ -81,7 +81,9 @@ public class Northman extends JFrame {
 		panel.add(label);
 		
 		JLabel poster = new JLabel("New label");
-		poster.setIcon(new ImageIcon("C:\\Program Files\\Java\\jre1.8.0_321\\bin\\b3.jpeg"));
+		//poster.setIcon(new ImageIcon("C:\\Program Files\\Java\\jre1.8.0_321\\bin\\b3.jpeg"));
+		Image img3 = new ImageIcon (this.getClass().getResource("/movie1.jpeg")).getImage();
+		poster.setIcon(new ImageIcon(img3));
 		poster.setBounds(31, 71, 196, 282);
 		contentPane.add(poster);
 		

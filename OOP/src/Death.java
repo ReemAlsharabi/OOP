@@ -2,6 +2,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.SystemColor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -75,7 +76,9 @@ public class Death extends JFrame {
 		panel.add(label);
 		
 		JLabel picture = new JLabel("New label");
-		picture.setIcon(new ImageIcon("C:\\Program Files\\Java\\jre1.8.0_321\\bin\\b7.jpeg"));
+		//picture.setIcon(new ImageIcon("C:\\Program Files\\Java\\jre1.8.0_321\\bin\\b7.jpeg"));
+		Image img3 = new ImageIcon (this.getClass().getResource("/movie4.jpeg")).getImage();
+		picture.setIcon(new ImageIcon(img3));
 		picture.setBounds(31, 71, 196, 282);
 		contentPane.add(picture);
 		
