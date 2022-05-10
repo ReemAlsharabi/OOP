@@ -1,5 +1,7 @@
 import java.time.LocalDate;
 
+import javax.swing.JOptionPane;
+
 public class Account extends Person
 {
 	protected String username;
@@ -15,20 +17,13 @@ public class Account extends Person
 		dateCreated = LocalDate.now();
 	}
 
-	public Account(String name, LocalDate birthDate, String username, String password, String email, String mobile)
+	public Account(String name, LocalDate birthDate, String username, String password, String email, String mobile) throws Exception
 	{
 		super(name, birthDate);
-		try
-		{
 			setUsername(username);
 			setPassword(password);
 			setEmail(email);
 			setMobile(mobile);
-		} catch (Exception e)
-		{
-			System.out.println(e);
-			
-		}
 		dateCreated = LocalDate.now();
 		
 	}
@@ -91,7 +86,7 @@ public class Account extends Person
 
 	public void setPassword(String password) throws Exception
 	{
-		boolean checkPassword = password.matches("[a-zA-Z0-9]{8,}");
+		boolean checkPassword = password.matches("[a-zA-Z0-9]{6,}");
 		if (!checkPassword)
 		{
 			throw new Exception("password must only contains alphanumeric characters for minimum 6 digits");
