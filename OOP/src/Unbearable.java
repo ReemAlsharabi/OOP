@@ -135,8 +135,6 @@ public class Unbearable extends JFrame {
 		lblProducer.setBounds(31, 425, 176, 39);
 		contentPane.add(lblProducer);
 		
-		
-		
 		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setBounds(298, 390, 138, 39);
 		contentPane.add(lblNewLabel_1);
@@ -170,6 +168,8 @@ public class Unbearable extends JFrame {
 		int userRate = parseInt(textField.getText());
 		Movie unberable = new Movie();
 		Director director = new Director();
+		Producer producer = new Producer();
+		Writer writer = new Writer();
 		User user = new User();
 		Action review = new Reviews( unberable ,user,"good",userRate);
 		unberable.setName("Unberable");
@@ -179,6 +179,9 @@ public class Unbearable extends JFrame {
 		
 		try{
 			director.setName(Directorname.getText());
+			unberable.addDirector(director);
+			producer.setName(lblKristinBurr.getText());
+			writer.setName(lblSjn.getText());
 		}
 		catch(Exception e){
 			System.out.println(e);
@@ -190,7 +193,6 @@ public class Unbearable extends JFrame {
 			String sql0 = "Select * from movie where name='"+unberable.getName()+"'";
 			ResultSet rs0 = stmt.executeQuery(sql0);
 			if(rs0.next()) {
-				return;
 			}
 			else {
 				String sql = "INSERT INTO movie (name,addedDate,description,genre) VALUES ('"+unberable .getName()+"', '"+unberable .getAddedDate()+"', '"+unberable .getDescription()+"', '"+genre.getText()+genre2.getText()+"')";
@@ -200,6 +202,47 @@ public class Unbearable extends JFrame {
 				java.sql.ResultSet rs;
 				rs = stmt.executeQuery("Select LAST_INSERT_ID() from stock limit 1");                
 				rs.next(); 
+			}
+			String sql2 = "Select * from director where name='"+Directorname.getText()+"'";
+			ResultSet rs2 = stmt.executeQuery(sql2);
+			if(rs2.next()) {
+			}
+			else {
+				String sql = "INSERT INTO director (name) VALUES ('"+Directorname.getText()+"')";
+				PreparedStatement create = con.prepareStatement(sql);
+				create.executeUpdate(sql);
+				//stmt.executeQuery(sql);
+				java.sql.ResultSet rs;
+		        rs = stmt.executeQuery("Select LAST_INSERT_ID() from stock limit 1");                
+		        rs.next();
+			}
+			
+			String sql3 = "Select * from writer where name='"+lblSjn.getText()+"'";
+			ResultSet rs3 = stmt.executeQuery(sql3);
+			if(rs3.next()) {
+			}
+			else {
+				String sql = "INSERT INTO writer (name) VALUES ('"+lblSjn.getText()+"')";
+				PreparedStatement create = con.prepareStatement(sql);
+				create.executeUpdate(sql);
+				//stmt.executeQuery(sql);
+				java.sql.ResultSet rs;
+		        rs = stmt.executeQuery("Select LAST_INSERT_ID() from stock limit 1");                
+		        rs.next();
+			}
+			
+			String sql4 = "Select * from producer where name='"+lblKristinBurr.getText()+"'";
+			ResultSet rs4 = stmt.executeQuery(sql4);
+			if(rs4.next()) {
+			}
+			else {
+				String sql = "INSERT INTO producer (name) VALUES ('"+lblKristinBurr.getText()+"')";
+				PreparedStatement create = con.prepareStatement(sql);
+				create.executeUpdate(sql);
+				//stmt.executeQuery(sql);
+				java.sql.ResultSet rs;
+		        rs = stmt.executeQuery("Select LAST_INSERT_ID() from stock limit 1");                
+		        rs.next();
 			}
 			con.close();
 		}

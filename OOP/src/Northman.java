@@ -166,10 +166,13 @@ public class Northman extends JFrame {
 		lblSjn.setFont(new Font("Tahoma", Font.PLAIN, 32));
 		lblSjn.setBounds(280, 498, 78, 39);
 		contentPane.add(lblSjn);
+		
 		/////////////////////////////////////////////////////////////
 		int userRate = parseInt(UserRate.getText());
 		Movie northman = new Movie();
 		Director director = new Director();
+		Producer producer = new Producer();
+		Writer writer = new Writer();
 		User user = new User();
 		Action review = new Reviews(northman,user,"good",userRate);
 		northman.setName("The Northman");
@@ -178,6 +181,9 @@ public class Northman extends JFrame {
 		northman.setDescription(Description.getText());
 		try{
 		  director.setName(Directorname.getText());
+		  producer.setName(producerName.getText());
+		  writer.setName(lblSjn.getText());
+		  northman.addDirector(director);
 		}
 		catch(Exception e){
 			System.out.println(e);
@@ -189,10 +195,51 @@ public class Northman extends JFrame {
 			String sql0 = "Select * from movie where name='"+northman.getName()+"'";
 			ResultSet rs0 = stmt.executeQuery(sql0);
 			if(rs0.next()) {
-				return;
 			}
 			else {
 				String sql = "INSERT INTO movie (name,addedDate,description,genre) VALUES ('"+northman.getName()+"', '"+northman.getAddedDate()+"', '"+northman.getDescription()+"', '"+genre.getText()+genre2.getText()+"')";
+				PreparedStatement create = con.prepareStatement(sql);
+				create.executeUpdate(sql);
+				//stmt.executeQuery(sql);
+				java.sql.ResultSet rs;
+		        rs = stmt.executeQuery("Select LAST_INSERT_ID() from stock limit 1");                
+		        rs.next();
+			}
+			
+			String sql2 = "Select * from director where name='"+Directorname.getText()+"'";
+			ResultSet rs2 = stmt.executeQuery(sql2);
+			if(rs2.next()) {
+			}
+			else {
+				String sql = "INSERT INTO director (name) VALUES ('"+Directorname.getText()+"')";
+				PreparedStatement create = con.prepareStatement(sql);
+				create.executeUpdate(sql);
+				//stmt.executeQuery(sql);
+				java.sql.ResultSet rs;
+		        rs = stmt.executeQuery("Select LAST_INSERT_ID() from stock limit 1");                
+		        rs.next();
+			}
+			
+			String sql3 = "Select * from writer where name='"+lblSjn.getText()+"'";
+			ResultSet rs3 = stmt.executeQuery(sql3);
+			if(rs3.next()) {
+			}
+			else {
+				String sql = "INSERT INTO writer (name) VALUES ('"+lblSjn.getText()+"')";
+				PreparedStatement create = con.prepareStatement(sql);
+				create.executeUpdate(sql);
+				//stmt.executeQuery(sql);
+				java.sql.ResultSet rs;
+		        rs = stmt.executeQuery("Select LAST_INSERT_ID() from stock limit 1");                
+		        rs.next();
+			}
+			
+			String sql4 = "Select * from producer where name='"+producerName.getText()+"'";
+			ResultSet rs4 = stmt.executeQuery(sql4);
+			if(rs4.next()) {
+			}
+			else {
+				String sql = "INSERT INTO producer (name) VALUES ('"+producerName.getText()+"')";
 				PreparedStatement create = con.prepareStatement(sql);
 				create.executeUpdate(sql);
 				//stmt.executeQuery(sql);
