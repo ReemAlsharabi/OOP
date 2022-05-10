@@ -153,9 +153,9 @@ public class SignUp extends JFrame {
 				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("M/dd/yyyy");
 				LocalDate dob = LocalDate.parse(birthDate,formatter);
 			
-				Account account = new Account(name.getText(), dob ,username.getText(),password.getText(),email.getText(),mobile.getText());
-				LocalDate dateCreated = account.getDateCreated();
 				
+			
+			
 				String accType = "user";
 				String Username = username.getText();
 				String Password = password.getText();
@@ -163,31 +163,35 @@ public class SignUp extends JFrame {
 				String Email = email.getText();
 				String Name =name.getText();
 				
-				try {
+				
+				try{
+					Account account = new Account(name.getText(), dob ,username.getText(),password.getText(),email.getText(),mobile.getText());
+					LocalDate dateCreated = account.getDateCreated();
+					
 					Class.forName("com.mysql.cj.jdbc.Driver");
-					Connection con = DriverManager.getConnection("jdbc:mysql://localhost/MovieDatabase", "root","");
+					Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/MovieDatabase", "root","");
 					Statement stmt = con.createStatement();
 					String sql = "INSERT INTO account (username,password,name,email,phone,accType,DoB,dateCreated) VALUES ('"+Username+"', '"+Password+"', '"+Name+"', '"+Email+"', '"+Phone+"', '"+accType+"', '"+dob+"', '"+dateCreated+"')";
 					PreparedStatement create = con.prepareStatement(sql);
 					create.executeUpdate(sql);
-					stmt.executeQuery(sql);
-					
+					//stmt.executeQuery(sql);
 					java.sql.ResultSet rs;
 			        rs = stmt.executeQuery("Select LAST_INSERT_ID() from stock limit 1");                
 			        rs.next(); 
-			        
 					con.close();
+					
+					HomePage homePage = new HomePage();
+				    homePage.show();
+				}
+				catch(SQLException e){
+					JOptionPane.showMessageDialog(null,e);
 				}
 				catch(Exception e1)
 				{
-					System.out.println(e1);
+					JOptionPane.showMessageDialog(null,e1);
 				}
-				finally{
-					HomePage homePage = new HomePage();
-				    homePage.show();
-					
-					dispose();
-				}
+				
+
 			}
 		});
 		btnSignUp.setBackground(SystemColor.activeCaption);
