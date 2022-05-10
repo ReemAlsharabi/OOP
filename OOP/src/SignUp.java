@@ -32,6 +32,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 
+
 public class SignUp extends JFrame {
 
 	private JPanel contentPane;
@@ -169,7 +170,7 @@ public class SignUp extends JFrame {
 					LocalDate dateCreated = account.getDateCreated();
 					
 					Class.forName("com.mysql.cj.jdbc.Driver");
-					Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/MovieDatabase", "root","");
+					Connection con = DriverManager.getConnection("jdbc:mysql://localhost/MovieDatabase", "root","");
 					Statement stmt = con.createStatement();
 					String sql = "INSERT INTO account (username,password,name,email,phone,accType,DoB,dateCreated) VALUES ('"+Username+"', '"+Password+"', '"+Name+"', '"+Email+"', '"+Phone+"', '"+accType+"', '"+dob+"', '"+dateCreated+"')";
 					PreparedStatement create = con.prepareStatement(sql);

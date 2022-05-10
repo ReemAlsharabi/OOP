@@ -15,6 +15,7 @@ import java.awt.event.MouseEvent;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
@@ -22,6 +23,9 @@ import java.awt.Font;
 import javax.swing.JTextArea;
 import java.awt.SystemColor;
 import java.awt.Image;
+import java.sql.DriverManager;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 public class Northman extends JFrame {
 
@@ -112,8 +116,8 @@ public class Northman extends JFrame {
 		Description.setFont(new Font("Monospaced", Font.PLAIN, 17));
 		Description.setBackground(Color.DARK_GRAY);
 		Description.setForeground(Color.WHITE);
-		Description.setToolTipText("From visionary director Robert Eggers comes \r\nThe Northman, an action-filled epic that follows \r\na young Viking prince on his quest to avenge\r\n his father's murder");
-		Description.setText("From visionary director Robert Eggers comes \r\nThe Northman, an action-filled epic that follows a \r\nyoung Viking prince on his quest to avenge \r\nhis father's murder");
+		Description.setToolTipText("From visionary director Robert Eggers comes \r\nThe Northman, an action-filled epic that follows \r\na young Viking prince on his quest to avenge\r\n his father''s murder");
+		Description.setText("From visionary director Robert Eggers comes \r\nThe Northman, an action-filled epic that follows a \r\nyoung Viking prince on his quest to avenge \r\nhis father''s murder");
 		Description.setBounds(239, 153, 308, 107);
 		contentPane.add(Description);
 		
@@ -174,6 +178,29 @@ public class Northman extends JFrame {
 		northman.setDescription(Description.getText());
 		try{
 		  director.setName(Directorname.getText());
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+		
+		try{
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost/MovieDatabase", "root","");
+			Statement stmt = con.createStatement();
+			String sql0 = "Select * from movie where name='"+northman.getName()+"'";
+			ResultSet rs0 = stmt.executeQuery(sql0);
+			if(rs0.next()) {
+				return;
+			}
+			else {
+				String sql = "INSERT INTO movie (name,addedDate,description,genre) VALUES ('"+northman.getName()+"', '"+northman.getAddedDate()+"', '"+northman.getDescription()+"', '"+genre.getText()+genre2.getText()+"')";
+				PreparedStatement create = con.prepareStatement(sql);
+				create.executeUpdate(sql);
+				//stmt.executeQuery(sql);
+				java.sql.ResultSet rs;
+		        rs = stmt.executeQuery("Select LAST_INSERT_ID() from stock limit 1");                
+		        rs.next();
+			}
+			con.close();
 		}
 		catch(Exception e){
 			System.out.println(e);

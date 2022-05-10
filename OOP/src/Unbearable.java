@@ -5,6 +5,11 @@ import java.awt.Font;
 import java.awt.SystemColor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -103,7 +108,7 @@ public class Unbearable extends JFrame {
 		contentPane.add(label_1);
 		
 		JTextArea Discrebtion = new JTextArea();
-		Discrebtion.setText("In this action-packed comedy, Nicolas\r\nCage plays Nick Cage, channeling his iconic \r\ncharacters as he's caught between a superfan\r\n(Pedro Pascal) and a CIA agent \r\n(Tiffany Haddish).");
+		Discrebtion.setText("In this action-packed comedy, Nicolas\r\nCage plays Nick Cage, channeling his iconic \r\ncharacters as he''s caught between a superfan\r\n(Pedro Pascal) and a CIA agent \r\n(Tiffany Haddish).");
 		Discrebtion.setFont(new Font("Monospaced", Font.PLAIN, 17));
 		Discrebtion.setBackground(Color.DARK_GRAY);
 		Discrebtion.setForeground(Color.WHITE);
@@ -160,7 +165,53 @@ public class Unbearable extends JFrame {
 		lblKristinBurr.setFont(new Font("Tahoma", Font.PLAIN, 33));
 		lblKristinBurr.setBounds(235, 446, 250, 39);
 		contentPane.add(lblKristinBurr);
-	}
+		
+		/////////////////////////////////////////////////////////////
+		int userRate = parseInt(textField.getText());
+		Movie unberable = new Movie();
+		Director director = new Director();
+		User user = new User();
+		Action review = new Reviews( unberable ,user,"good",userRate);
+		unberable.setName("Unberable");
+		unberable.setGenre(genre.getText());
+		unberable.setGenre(genre2.getText());
+		unberable.setDescription(Discrebtion.getText());
+		
+		try{
+			director.setName(Directorname.getText());
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+		
+		try{
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost/MovieDatabase", "root","");
+			Statement stmt = con.createStatement();
+			String sql0 = "Select * from movie where name='"+unberable.getName()+"'";
+			ResultSet rs0 = stmt.executeQuery(sql0);
+			if(rs0.next()) {
+				return;
+			}
+			else {
+				String sql = "INSERT INTO movie (name,addedDate,description,genre) VALUES ('"+unberable .getName()+"', '"+unberable .getAddedDate()+"', '"+unberable .getDescription()+"', '"+genre.getText()+genre2.getText()+"')";
+				PreparedStatement create = con.prepareStatement(sql);
+				create.executeUpdate(sql);
+				//stmt.executeQuery(sql);
+				java.sql.ResultSet rs;
+				rs = stmt.executeQuery("Select LAST_INSERT_ID() from stock limit 1");                
+				rs.next(); 
+			}
+			con.close();
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+		/////////////////////////////////////////////////////////////
+		}
+		
+	private int parseInt(String text) {
+		// TODO Auto-generated method stub
+		return 0;
 	
-
+	}
 }

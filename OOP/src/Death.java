@@ -5,6 +5,11 @@ import java.awt.Font;
 import java.awt.SystemColor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -74,7 +79,7 @@ public class Death extends JFrame {
 		picture.setBounds(31, 71, 196, 282);
 		contentPane.add(picture);
 		
-		JLabel genre = new JLabel("Drama");
+		JLabel genre = new JLabel("Drama ");
 		genre.setForeground(Color.WHITE);
 		genre.setBounds(272, 81, 124, 39);
 		contentPane.add(genre);
@@ -160,7 +165,53 @@ public class Death extends JFrame {
 		textField.setBounds(287, 554, 91, 45);
 		contentPane.add(textField);
 		textField.setColumns(10);
+		
+		/////////////////////////////////////////////////////////////
+		int userRate = parseInt(textField.getText());
+		Movie death = new Movie();
+		Director director = new Director();
+		User user = new User();
+		Action review = new Reviews(death ,user,"good",userRate);
+		death.setName("Death");
+		death.setGenre(genre.getText());
+		death.setGenre(genre2.getText());
+		death.setDescription(Discrebtion.getText());
+		
+		try{
+			director.setName(Directorname.getText());
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+		
+		try{
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost/MovieDatabase", "root","");
+		Statement stmt = con.createStatement();
+		String sql0 = "Select * from movie where name='"+death.getName()+"'";
+		ResultSet rs0 = stmt.executeQuery(sql0);
+		if(rs0.next()) {
+			return;
+		}
+		else {
+			String sql = "INSERT INTO movie (name,addedDate,description,genre) VALUES ('"+death.getName()+"', '"+death.getAddedDate()+"', '"+death.getDescription()+"', '"+genre.getText()+genre2.getText()+"')";
+			PreparedStatement create = con.prepareStatement(sql);
+			create.executeUpdate(sql);
+			//stmt.executeQuery(sql);
+			java.sql.ResultSet rs;
+			rs = stmt.executeQuery("Select LAST_INSERT_ID() from stock limit 1");                
+			rs.next();
+		}
+		con.close();
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+		/////////////////////////////////////////////////////////////
 	}
 	
-
+	private int parseInt(String text) {
+		// TODO Auto-generated method stub
+		return 0;
+	
+	}
 }

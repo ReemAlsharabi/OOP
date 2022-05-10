@@ -81,7 +81,7 @@ public class SignIn extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					Class.forName("com.mysql.cj.jdbc.Driver");
-					Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/MovieDatabase", "root","");
+					Connection con = DriverManager.getConnection("jdbc:mysql://localhost/MovieDatabase", "root","");
 					Statement stmt = con.createStatement();
 					String sql = "Select * from account where username='"+username.getText()+"'and password='"+password.getText().toString()+"'";
 					ResultSet rs = stmt.executeQuery(sql);
