@@ -9,7 +9,7 @@ https://www.youtube.com/watch?v=W9r2T1_1xZw
 ## Getting Started
 1. Clone the repository to your local machine.
 
-```git clone https://github.com/YOUR_USERNAME/movie-rating-system.git```
+```git clone https://github.com/ReemAlsharabi/OOP.git```
 
 2. Open the project in your preferred Java IDE.
 
